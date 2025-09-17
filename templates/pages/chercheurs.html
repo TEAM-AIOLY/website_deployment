@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Chercheurs - Labcom AIOLY{% endblock %}
+
+{% block content %}
+<!-- Contenu principal : Liste des chercheurs en deux colonnes -->
+<div class="container main-content">
+    <h1>Nos Chercheuses et Chercheurs</h1>
+    <p>Découvrez les membres de notre équipe de recherche de part et d'autres du Labcom.</p>
+
+    <!-- Conteneur Flex pour les deux colonnes -->
+    <div class="chercheurs-groupes">
+        <!-- Colonne Groupe A -->
+        <div class="groupe">
+            <h2>INRAE</h2>
+            {% for key, chercheur in chercheurs.items %}
+                {% if chercheur.Etablissement == 'INRAE' %}
+                    <div class="profile">
+                        <a href="{% url 'chercheurs_page' chercheur_name=key %}">
+                            <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
+                        </a>
+                        <div>
+                            <h3>{{ chercheur.Prenom }} {{ chercheur.Nom }}</h3>
+                            <p>{{ chercheur.Description }}</p>
+                            <a href="{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Colonne Groupe B -->
+        <div class="groupe">
+            <h2>Pellenc ST</h2>
+            {% for key, chercheur in chercheurs.items %}
+                {% if chercheur.Etablissement == 'PST' %}
+                    <div class="profile">
+                        <a href="{% url 'chercheurs_page' chercheur_name=key %}">
+                            <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
+                        </a>
+                        <div>
+                            <h3>{{ chercheur.Prenom }} {{ chercheur.Nom }}</h3>
+                            <p>{{ chercheur.Description }}</p>
+                            <a href="{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

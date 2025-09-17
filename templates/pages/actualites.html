@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Actualités - Labcom AIOLY{% endblock %}
+
+{% block content %}
+<!-- Contenu principal -->
+<div class="container main-content">
+    <h1>Bienvenue sur Labcom AIOLY</h1>
+    <p>Découvrez les dernières nouvelles, articles et informations sur nos projets de recherche et innovations.</p>
+
+    <div class="actualites_evenements_container">
+        <div class="actualites_evenements">
+            <h2>Actualités : </h2>
+            <div class="actualite">
+                    <h1>04/11/2024 | Pertuis</h1>
+                    <h2>Début de thèse d'Ivy Tumoine</h2>
+                <p>
+                    Début de thèse de Ivy Tumoine sur l'auto-supervision appliqué aux données hyper-spectrales.
+                    Les premiers travaux se concentreront sur les transformations à appliquer aux données spectrales.
+                </p>
+            </div>
+            <div class="actualite">
+                    <h1>04/11/2024 | Montpellier</h1>
+                    <h2>Participation à HELIOSPIR</h2>
+                <p>
+                    Présentation de poster sur l'utilisation de l'active learning pour calibrer des spectromètres entre eux. 
+                    Sessions d'échanges et workshops.
+                </p>
+            </div>
+        </div>
+        <div class="actualites_evenements">
+            <h2>Événements : </h2>
+            <div class="actualite">
+                    <h1>04/12/2024 | Pertuis</h1>
+                    <h2>Séminaire sur l'IA dans la physique</h2>
+                <p>
+                    Séminaire sur l'utilisation des modèles d'apprentissage profond dans le domaine de la physique. Workshops sur les modèles auto-régressifs.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <h2>Nos sujets de recherche : </h2>
+
+    <!-- Article 1 -->
+    <div class="article">
+        <img src="{% static 'Images/selfsup_dino.png' %}" alt="Illustration Article 1"> <!-- Image de l'article 1 -->
+        <div>
+            <h2>Apprentissage auto-supervisé</h2>
+            <p>L'apprentissage auto-supervisé est une méthode d'apprentissage qui ne recquiert pas d'annotation manuelle. Le modèle apprend des représentations utiles en s'appuyant sur des relations ou des structures internes présentes dans les données.</p>
+            <a href="{% url 'apprentissage_autosup' %}">Lire plus</a>
+        </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="article">
+        <img src="{% static 'Images\polarisation.png' %}" alt="Illustration Article 2"> <!-- Image de l'article 2 -->
+        <div>
+            <h2>Polarisation de mueller</h2>
+            <a href="{% url 'polarisation_mueller' %}">Lire plus</a>
+        </div>
+    </div>
+
+
+    <!-- Article 3 -->
+
+</div>
+
+{% endblock %}

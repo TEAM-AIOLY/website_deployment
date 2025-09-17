@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contacts - Labcom AIOLY{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Nous contacter</h1>
+	<p>Pour tout contact ou demande d'informations veuillez contacter : </p>
+
+	<p style="text-indent: 80px;">
+		<span style="font-weight: bold;">Ryad Bendoula  </span> (Equipe COMIC, Inrae) :
+		
+        <a href="mailto:ryad.bendoula@inrae.fr" style="color: #002F5C; text-decoration: underline;">ryad.bendoula@inrae.fr</a>
+    </p>
+	<p style="text-indent: 80px;">
+		<span style="font-weight: bold;">Maxime Metz  </span> (Pellenc ST) :
+        <a href="mailto:m.metz@pellencst.com" style="color: #002F5C; text-decoration: underline;">m.metz@pellencst.com</a>
+    </p>
+	<!-- Ajout de l'animation GIF -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="/static/Images/garlic.gif" alt="Animation illustrative" style="max-width: 30%; height: auto;">
+    </div>
+</div>
+
+{% endblock %}

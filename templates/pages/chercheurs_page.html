@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Chercheurs - Labcom AIOLY{% endblock %}
+
+{% block content %}
+
+    </header>
+
+<div class="container">
+    <div class="profile">
+        <!-- Image du chercheur -->
+        <img src="{% static 'Images/'|add:Image_path %}" 
+             alt="{{ Prenom }} {{ Nom }}" 
+             style="
+                 max-width: 200px;       /* Largeur maximale de l'image */
+                 width: auto;            /* Largeur automatique pour garder le ratio */
+                 height: 150px;           /* Hauteur automatique pour garder le ratio */
+                 object-fit: cover;      /* Couvrir tout l'espace disponible tout en gardant le ratio */
+                 margin-right: 15px;     /* Espace entre l'image et le texte */
+                 border-radius: 5px;     /* Coins arrondis pour l'image */
+             ">
+
+        <!-- Détails du chercheur -->
+        <div>
+            <h2>{{Nom}} {{Prenom}}</h2>
+            <p><strong>Domaine de recherche :</strong> {{Domaine_de_recherche}}</p>
+
+            {% if Publications %}
+                <p><strong>Publications :</strong></p>
+                <ul>
+                    {% for pub in Publications %}
+                        <li>{{ pub }}</li>
+                    {% empty %}
+                        <li>Aucune publication disponible.</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        
+            {% if Brevets %}
+                <p><strong>Brevets récents :</strong></p>
+                <ul>
+                    {% for brev in Brevets %}
+                        <li>{{ brev }}</li>
+                    {% empty %}
+                        <li>Aucun brevet disponible.</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        
+            {% if Biographie %}
+                <p><strong>Biographie :</strong></p>
+                <p> {{Biographie}} </p>
+            {% else %}
+                <p><strong>Biographie :</strong></p>
+                <p> Aucune biographie disponible.</p>
+            {% endif %}
+            
+            {% if Google_Scholar %}
+                <p><strong>Google Scholar :</strong> 
+                    <a href="{{ Google_Scholar }}" target="_blank">{{ Google_Scholar }}</a>
+                </p>
+            {% endif %}
+        
+            {% if Linkedin %}
+                <p><strong>Linkedin :</strong> 
+                    <a href="{{ Linkedin }}" target="_blank">{{ Linkedin }}</a>
+                </p>
+            {% endif %}
+        
+        
+            
+        </div>
+    </div>
+
+    <!-- Lien de retour -->
+    <p><a href="{% url 'chercheurs' %}">&larr; Retour à la liste des chercheurs</a></p>
+</div>
+
+{% endblock %}

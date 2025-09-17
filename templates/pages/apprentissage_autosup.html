@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Actualités - Labcom AIOLY{% endblock %}
+
+{% block content %}
+
+
+<!-- Contenu principal -->
+<div class="container main-content">
+
+    <!-- Article 1 -->
+    <div class="article" style="display: flex; align-items: flex-start;">
+        <img src="{% static 'Images/selfsup_dino.PNG' %}"
+             alt="Illustration Article 1"
+             style="vertical-align: top; margin-right: 20px;">
+        <div>
+            <h2>L'apprentissage auto-supervisé</h2>
+            <p>
+                L'apprentissage auto-supervisé est une méthode d'apprentissage profond qui tire parti de larges bases de données non-annotées.
+                Les modèles entraînés en auto-supervision présentent les meilleurs performances dans le traitement du langage, notamment avec les chatbots et d'excellentes performance en vision par ordinateur. <br>
+            </p>
+            <h3>Apprentissage auto-supervisé pour le texte et l'image</h3>
+            <p>
+                Pour entrainer un modèle à faire une tâche souhaitée, la méthode classique d'apprentissage consiste à minimiser l'erreur entre la prédiction du modèle et la prédiction faite par un annotateur humain.
+                Obtenir une annotation est souvent long, pénible et extrêmement onéreux, c'est la principale raison pour laquelle les modèles auto-supervisés sont si intéressants. <br>
+            </p>
+            <p>
+                On peut voir un modèle neuronal profond comme la succession d'un encodeur et d'un décodeur. L'encodeur permet d'obtenir des représentations de nos données et le décodeur permet d'effectuer la tâche souhaitée.
+                La figure 1 illustre cela avec le modèle AlexNet, une première succession de convolutions permettent d'obtenir une représentation de l'image, puis, quelques couches denses permettent de décoder cette information afin de décider à quelle classe appartient l'image.
+            </p>
+            <div class="figure">
+                <img src="{% static 'Images/enc_dec.PNG' %}"
+                alt="Illustration Article 1"
+                style="max-width: 50%; margin-right: 30%; padding-top: 10px;">
+            </div>
+            <p>
+                Pour utiliser un modèle entraîné en auto-supervision afin de réaliser une tâche souhaitée, on transfert l'encodeur du modèle et on y ajoute un décodeur adapté à notre tâche.
+                Transférer l'encodeur consiste à reprendre son architecture et ses poids, c'est un simple "copié-collé".
+                L'ensemble encodeur et décodeur est alors entraîné à réaliser la tâche souhaitée. Ce fonctionnement est illustré en figure 2.
+                L'idée est que l'encodeur entrainé en auto-supervision est capable de fournir de bonnes représentations des données, et donc, qu'il est bien meilleur qu'un encodeur ayant été initialisé avec des poids aléatoirs.
+            </p>
+            <div class="figure">
+                <img src="{% static 'Images/auto_sup_entr.PNG' %}"
+                alt="Illustration Article 1"
+                style="max-width: 55%; margin-right: 30%; padding-top: 10px;">
+            </div>
+            <p>
+                Afin d'apprendre à fournir de bonnes représentations, les modèles entraînés en auto-supervision apprennent sur une <i>tâche prétexte</i>.
+                Cette tâche prétexte est fondée sur l'observation des données et ne requiert aucune annotation manuelle.
+                Il existe 3 grandes familles de tâches prétextes :
+                <ul>
+                    <li>
+                        <b>Les tâches de reconstruction.</b> À partir d'une donnée dont on a masqué automatiquement une partie de l'information, le modèle doit reconstruire la donnée complète.
+                        Pour une modalité telle que les images, ce masquage peut consister à désactiver aléatoirement un groupe de pixels, pour le texte cela peut être de masquer des mots de la phrase.
+                    </li>
+                    <li>
+                        <b>Les tâches contrastives.</b> Le modèle est entraîné à obtenir des représentations proches pour des images similaires (paires positives) et des représentations éloignées pour des images différentes (paires négatives).
+                        Les paires positives sont obtenues en appliquant des transformations aussi appelées augmentations de données à une même image. Par exemple, une augmentation commune pour les images consiste à obtenir deux sous-images en recadrant l'image d'origine, ces sous-images forment une paire positive.
+                    </li>
+                    <li>
+                        <b>Les tâches d'invariance.</b> Ici, le modèle est seulement entraîné à obtenir des représentations proches pour des images similaires. Une solution triviale à ce problème consisterait à dire que toutes les images sont les mêmes, c'est ce qu'on appèle <i>l'effondremment</i>.
+                        Un modèle s'étant éffondré n'est d'aucune utilité puisqu'il fournit la même représentation pour chaque image.
+                        Pour éviter le phénomène d'effondremment, différentes contraintes de régularisation sont appliquées durant l'entraînement.
+                    </li>
+                </ul>
+            </p>
+            <h3>L'apprentissage auto-supervisé appliqué aux données spectrales</h3>
+            <p>
+                Si l'apprentissage auto-supervisé est très populaire pour les images et le texte, il est quasi inexistant pour les données spectrales.
+                C'est pourquoi PellencST et l'équipe COMIC ont lancé une thèse intitulée "Apprentissage auto-supervisé appliqué aux données spectrales pour le tri des déchets.".
+                Cette thèse est réalisée par Ivy Tumoine, co-dirigée par Ryad Bendoula et Jean-Michel Roger et co-encadrée par Maxime Metz et Florent Abdelgafour. <br>
+                L'adaptation de ces approches auto-supervisées nécessite de lever trois verrous méthodologiques majeurs:
+                <ul>
+                    <li>
+                        <b>Augmentation de données spectrales.</b> Premièrement, les approches auto-supervisées cherchent majoritairement à rendre les modèles invariants à des perturbations à l'aide d'augmentations de données.
+                        Cependant, peu de développements ont été réalisés autour de l'augmentation de données spectrales pour l'entrainement de réseaux de neurones.
+                        Comme ces augmentations déterminent la connaissance que va acquérir le modèle, il est primordial de les concevoir en prenant en compte la nature des données spectrales : composition, dépendances lointaines, conditions de mesure…
+                    </li>
+                    <li>
+                        <b>Réseaux neuronaux adaptés aux données spectrales</b>Deuxièmement, les approches proposées nécessiteront potentiellement des réseaux de neurones plus adaptés au traitement de données spectrales.
+                        Un grand nombre d'architectures sont disponibles pour du traitement de vidéos et d'images, cependant pour le traitement de données spectrales peu d'architectures sont disponibles.
+                        De plus, les réseaux de neurones comme les ResNet ne prennent pas en compte l'information contextuelle.
+                        En effet, il existe des corrélations lointaines entre les différentes longueurs d'ondes qui ne pourront pas toujours être considérées par des architectures de type ResNet.
+                        De nouvelles architectures comme les Transformers (SWIN, ViT, etc) devront donc être explorées.
+                    </li>
+                    <li>
+                        <b>Stratégies d'auto-supervision adaptées aux données spectrales</b>Troisièmement, les stratégies d'auto-supervision mises en œuvre dans les autres domaines, tels que la vision, ne prennent pas en compte la structure des données spectrales.
+                        Par exemple, le masquage va uniquement corrompre localement et spatialement les données d'entrée, cependant, certaines signatures spectrales ne répondent qu'à une gamme de longueurs d'ondes.
+                        Un des objectifs de la thèse sera donc de proposer une ou plusieurs stratégies d'auto-supervision adaptées aux données spectrales, par exemple en masquant une partie des structures latentes dans les données.
+                    </li>
+                </ul>
+
+            </p>
+        </div>
+    </div>
+</div>
+<a href="{% url 'actualites' %}">Retour</a>
+    
+    
+{% endblock %}
