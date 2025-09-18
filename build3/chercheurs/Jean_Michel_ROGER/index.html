@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chercheurs - Labcom AIOLY</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #002F5C;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            padding: 20px 20px; /* padding identique pour tous */
+            border-radius: 10px; /* arrondi doux */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a.active {
+            background-color: white;
+            color: #002F5C;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 80px;
+        }
+
+        .logo_inrae img {
+            height: 40px;
+            margin-right: 80px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .lang-switcher a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .lang-switcher a:hover {
+            color: #ADD8E6;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+        .article {
+            display: flex; /* Flexbox pour aligner l'image et le texte */
+            border: 1px solid #ccc; /* Bordure autour de l'article */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px; /* Espace entre les articles */
+            align-items: center; /* Aligner les items au début */
+            background-color: white;
+        }
+
+        .article img {
+            max-width: 150px; /* Largeur maximale de l'image */
+            width: auto; /* Largeur automatique pour garder le ratio */
+            height: auto; /* Hauteur automatique pour garder le ratio */
+            object-fit: cover; /* Couvrir tout l'espace disponible tout en gardant le ratio */
+            margin-right: 15px; /* Espace entre l'image et le texte */
+            border-radius: 5px; /* Coins arrondis pour l'image */
+        }
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* ou space-between si tu veux les écarter */
+            gap: 40px; /* espace entre les logos */
+        }
+        footer {
+            background-color: #002F5C;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .actualites_evenements_container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2%;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        .actualites_evenements {
+            display: flex; /* Flexbox pour aligner l'image et le texte */
+            flex-direction: column;
+            justify-content: start;
+            border: 1px solid #ccc; /* Bordure autour de l'article */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px; /* Espace entre les articles */
+            background-color: white;
+            height: 30ch;
+            overflow-y: scroll;
+        }
+        .actualite {
+            border-bottom: 1px solid #ccc;
+        }
+        .actualite h1 {
+            color: grey;
+            font-size: small;
+        }
+        .actualite h2 {
+            font-size: medium;
+        }
+        		.chercheurs-groupes {
+			display: flex; /* Utilise Flexbox pour afficher les colonnes */
+			justify-content: space-between; /* Sépare les colonnes */
+			gap: 20px; /* Espace entre les colonnes */
+		}
+
+		.groupe {
+			flex: 1; /* Chaque colonne prend la même largeur */
+			padding: 15px;
+			border: 1px solid #ccc; /* Optionnel : ajoute une bordure autour des colonnes */
+			border-radius: 5px; /* Coins arrondis */
+		}
+
+		.groupe h2 {
+			text-align: center; /* Centre le titre du groupe */
+		}
+
+		.profile {
+			display: flex;
+			margin-bottom: 20px;
+		}
+
+		.profile img {
+			max-width: 100px; /* Ajustez la taille des images */
+			margin-right: 15px;
+			border-radius: 5px;
+		}
+        @media (max-width: 768px) {
+			.chercheurs-groupes {
+				flex-direction: column; /* Passe à une colonne sur les petits écrans */
+			}
+		}
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            nav ul {
+                flex-direction: column;
+            }
+        
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+        .article .social-media {
+			margin-top: 10px; /* Ajoute un peu d'espace entre le texte et les icônes */
+			display: flex;
+		}
+
+		.article .social-media a {
+			margin-right: 10px; /* Espace entre les icônes */
+		}
+
+		.article .social-icon {
+			width: 24px;
+			height: 24px;
+			transition: transform 0.3s ease;
+		}
+
+		.article .social-icon:hover {
+			transform: scale(3); /* Agrandit l'icône au survol */
+		}
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+			font-size: 1.1em;
+        }
+		th{
+		background-color: #f4f4f4;
+		}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="/" class="">Accueil</a></li>
+            <li><a href="/actualites/" class="">Actualités</a></li>
+            <li><a href="/chercheurs/" class="active">Chercheurs</a></li>
+            <li><a href="/partenaires/" class="">Partenaires</a></li>
+            <li><a href="/contacts/" class="">Nous contacter</a></li>
+        </ul>
+    </nav>
+
+    <div class="logos-container">
+        <div class="logo">
+            <img src="/website_deployment/static/Images/Image1.png" alt="Logo Labcom">
+        </div>
+        <div class="logo_inrae">
+            <a href="https://www.inrae.fr" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_INRAE_Transparent.png" alt="Logo INRAE">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="https://www.pellencst.com" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_pellenc.png" alt="Logo Pellenc">
+            </a>
+        </div>
+    </div>
+
+    <div class="lang-search">
+        <div class="lang-switcher">
+            <a href="/">FR</a> |
+        </div>
+    </div>
+</header>
+
+<div class="container main-content">
+    
+
+    </header>
+
+<div class="container">
+    <div class="profile">
+        <!-- Image du chercheur -->
+        <img src="/website_deployment/static/Images/Jeanmichel_ROGER.jpg" 
+             alt="Jean-Michel ROGER" 
+             style="
+                 max-width: 200px;       /* Largeur maximale de l'image */
+                 width: auto;            /* Largeur automatique pour garder le ratio */
+                 height: 150px;           /* Hauteur automatique pour garder le ratio */
+                 object-fit: cover;      /* Couvrir tout l'espace disponible tout en gardant le ratio */
+                 margin-right: 15px;     /* Espace entre l'image et le texte */
+                 border-radius: 5px;     /* Coins arrondis pour l'image */
+             ">
+
+        <!-- Détails du chercheur -->
+        <div>
+            <h2>ROGER Jean-Michel</h2>
+            <p><strong>Domaine de recherche :</strong> Chimiométrie, Spectroscopie</p>
+
+            
+        
+            
+        
+            
+                <p><strong>Biographie :</strong></p>
+                <p> Jean-Michel ROGER a obtenu son diplôme d&#x27;ingénieur du génie rural en 1990 et son doctorat en 1995. Depuis les années 90, il mène des recherches en spectrométrie proche infrarouge et en chimiométrie. Son souci constant est de produire des solutions simples et opérationnelles pour mettre en œuvre la NIRS pour l&#x27;environnement et à l&#x27;agriculture. Pour rendre les capteurs embarqués opérationnels, il a d&#x27;abord étudié les problèmes de robustesse de l&#x27;étalonnage. Il a ainsi promu les méthodes d&#x27;orthogonalisation, qui sont maintenant utilisées dans des applications pratiques, comme le transfert d&#x27;étalonnage ou la correction de l&#x27;effet d&#x27;humidité. Il a également étudié les techniques de sélection de variables, dédiées au cas spécifique de la NIRS, ce qui lui a permis de développer des capteurs NIR pour l&#x27;agriculture. En 2016, il a reçu le prix Tomas Hirschfeld du Comité international de la spectroscopie NIR et le prix de la recherche appliquée de la FIECC. En 2018, il a créé le pôle de recherche en chimiométrie ChemHouse, qui promeut l&#x27;éducation, la recherche et la coopération autour de la NIRS et de la chimiométrie (http://chemproject.org). </p>
+            
+            
+            
+                <p><strong>Google Scholar :</strong> 
+                    <a href="https://scholar.google.fr/citations?user=doxD0JMAAAAJ&amp;hl=fr" target="_blank">https://scholar.google.fr/citations?user=doxD0JMAAAAJ&amp;hl=fr</a>
+                </p>
+            
+        
+            
+                <p><strong>Linkedin :</strong> 
+                    <a href="https://www.linkedin.com/in/jean-michel-roger-37297a13b/" target="_blank">https://www.linkedin.com/in/jean-michel-roger-37297a13b/</a>
+                </p>
+            
+        
+        
+            
+        </div>
+    </div>
+
+    <!-- Lien de retour -->
+    <p><a href="/chercheurs/">&larr; Retour à la liste des chercheurs</a></p>
+</div>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Labcom AIOLY. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

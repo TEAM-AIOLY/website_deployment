@@ -122,7 +122,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+if 'distill' in os.environ.get('DJANGO_SETTINGS_MODULE', ''):
+    # Build statique pour GitHub Pages
+    STATIC_URL = '/website_deployment/static/'
+    print("static_url", STATIC_URL)
+else:
+    # Développement local
+    STATIC_URL = '/website_deployment/static/'
+    print("static_url", STATIC_URL)
+DISTILL_STATIC = True
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
