@@ -42,7 +42,7 @@
                         <div>
                             <h3>{{ chercheur.Prenom }} {{ chercheur.Nom }}</h3>
                             <p>{{ chercheur.Description }}</p>
-                            <a href="{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
+                            <a href="/website_deployement{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
                         </div>
                     </div>
                 {% endif %}
