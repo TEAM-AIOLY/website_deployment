@@ -124,11 +124,11 @@ USE_TZ = True
 
 if 'distill' in os.environ.get('DJANGO_SETTINGS_MODULE', ''):
     # Build statique pour GitHub Pages
-    STATIC_URL = 'static/'
+    STATIC_URL = '/website_deployment/static/'
     print("static_url", STATIC_URL)
 else:
     # Développement local
-    STATIC_URL = 'static/'
+    STATIC_URL = '/website_deployment/static/'
     print("static_url", STATIC_URL)
 DISTILL_STATIC = True
 
