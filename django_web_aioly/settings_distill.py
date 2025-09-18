@@ -1,7 +1,7 @@
 from .settings import *
 
 # Pour Django Distill et GitHub Pages : chemins relatifs
-STATIC_URL = '/website_deployment/static/'
+STATIC_URL = 'static/'
 MEDIA_URL = './media/'
 
 # Si tu veux, tu peux aussi désactiver le debug pour le build
