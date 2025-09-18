@@ -33,5 +33,5 @@ urlpatterns = [
     distill_path('chercheurs/', views.chercheurs, name='chercheurs', distill_func=get_none, distill_file='chercheurs/index.html'),
     distill_path('chercheurs/<str:chercheur_name>/', views.chercheurs_page, name='chercheurs_page', distill_func=get_chercheurs),
     distill_path('partenaires/', views.partenaires, name='partenaires', distill_func=get_none, distill_file='partenaires/index.html'),
-    distill_path('contacts/', views.contact, name='contact', distill_func=get_none, distill_file='contacts/index.html'),
+    distill_path('contact/', views.contact, name='contact', distill_func=get_none, distill_file='contact/index.html'),
 ]
