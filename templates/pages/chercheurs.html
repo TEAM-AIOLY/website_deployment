@@ -17,7 +17,7 @@
             {% for key, chercheur in chercheurs.items %}
                 {% if chercheur.Etablissement == 'INRAE' %}
                     <div class="profile">
-                        <a href="{% url 'chercheurs_page' chercheur_name=key %}">
+                        <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">
                             <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
                         </a>
                         <div>
@@ -36,7 +36,7 @@
             {% for key, chercheur in chercheurs.items %}
                 {% if chercheur.Etablissement == 'PST' %}
                     <div class="profile">
-                        <a href="{% url 'chercheurs_page' chercheur_name=key %}">
+                        <a href="/website_deployement{% url 'chercheurs_page' chercheur_name=key %}">
                             <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
                         </a>
                         <div>
