@@ -5,63 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0068915-4733-472f-9cde-be2b57768a16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acceuil/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualites/apprentissage_autosup/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualites/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualites/polarisation_mueller/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Daphne_HERAN/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/David_ESTEVE/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Florent_ABDELGHAFOUR/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Gwenaele_LECORRE/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Ivy_TUMOINE/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Jean_Michel_ROGER/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Maxime_METZ/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Nicolas_EMANUELY/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Ryad_BENDOULA/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Tom_MONTAURIOL/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/Vincent_ROLLAND/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chercheurs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contacts/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/partenaires/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/CL1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/CL1p.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/CL2.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/CL2p.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/David_ESTEVE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Florent_Abdelghafour.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Image1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Ivy_TUMOINE_carre.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Jeanmichel_ROGER.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Linkedin_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Logo_AIOLY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Logo_INRAE_Transparent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Logo_pellenc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Maxime_metz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Nicolas_Grotus.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Nicolas_emanuely.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/PSG_PSA.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Ryad_Bendoula.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Sphere_poincarre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Tom_MONTAURIOL.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Vecteur_stokes.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/Vincent_ROLLAND.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/X_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/YT_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/apprentissage_renforcement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/auto_sup_entr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/cerveau.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/cerveau.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/daphne_HERAN.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/enc_dec.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/garlic.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/gwen2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/loupe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/montage_reflexion.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/onde-em.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/polarisation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_deployment/static/Images/selfsup_dino.PNG" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,27 +40,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.django_web_aioly.executor": "Run",
-    "Python.manage.executor": "Run",
-    "Python.views.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "gh-pages",
-    "last_opened_file_path": "C:/Users/n.emanuely/PycharmProjects/django_web_aioly/static/Images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.django_web_aioly.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gh-pages&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/n.emanuely/PycharmProjects/django_web_aioly/static/Images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\static\Images" />
@@ -124,6 +69,7 @@
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly" />
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\build" />
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\templates\pages" />
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\static" />
