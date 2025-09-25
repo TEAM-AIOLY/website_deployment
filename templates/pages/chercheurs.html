@@ -36,13 +36,13 @@
             {% for key, chercheur in chercheurs.items %}
                 {% if chercheur.Etablissement == 'PST' %}
                     <div class="profile">
-                        <a href="/website_deployement{% url 'chercheurs_page' chercheur_name=key %}">
+                        <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">
                             <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
                         </a>
                         <div>
                             <h3>{{ chercheur.Prenom }} {{ chercheur.Nom }}</h3>
                             <p>{{ chercheur.Description }}</p>
-                            <a href="/website_deployement{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
+                            <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
                         </div>
                     </div>
                 {% endif %}
