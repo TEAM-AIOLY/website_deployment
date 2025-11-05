@@ -120,16 +120,27 @@
             width: 100%;
         }
         .actualites_evenements {
-            display: flex; /* Flexbox pour aligner l'image et le texte */
-            border: 1px solid #ccc; /* Bordure autour de l'article */
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px; /* Espace entre les articles */
-            align-items: center; /* Aligner les items au début */
-            background-color: white;
+            margin-top: 2rem;
         }
+
+        .actualites-liste {
+            max-height: 400px; /* hauteur fixe de la zone */
+            overflow-y: auto;  /* active la barre de défilement verticale */
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
         .actualite {
-            border-bottom: 1px solid #ccc;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .actualite:hover {
+            transform: scale(1.01);
         }
         .actualite h1 {
             color: grey;
@@ -138,7 +149,7 @@
         .actualite h2 {
             font-size: medium;
         }
-        		.chercheurs-groupes {
+        .chercheurs-groupes {
 			display: flex; /* Utilise Flexbox pour afficher les colonnes */
 			justify-content: space-between; /* Sépare les colonnes */
 			gap: 20px; /* Espace entre les colonnes */
@@ -249,7 +260,7 @@
 
     <div class="lang-search">
         <div class="lang-switcher">
-            <a href="/">FR</a> |
+            <a href="/static">FR</a> |
         </div>
     </div>
 </header>

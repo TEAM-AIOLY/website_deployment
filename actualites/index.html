@@ -120,16 +120,27 @@
             width: 100%;
         }
         .actualites_evenements {
-            display: flex; /* Flexbox pour aligner l'image et le texte */
-            border: 1px solid #ccc; /* Bordure autour de l'article */
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px; /* Espace entre les articles */
-            align-items: center; /* Aligner les items au début */
-            background-color: white;
+            margin-top: 2rem;
         }
+
+        .actualites-liste {
+            max-height: 400px; /* hauteur fixe de la zone */
+            overflow-y: auto;  /* active la barre de défilement verticale */
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
         .actualite {
-            border-bottom: 1px solid #ccc;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .actualite:hover {
+            transform: scale(1.01);
         }
         .actualite h1 {
             color: grey;
@@ -138,7 +149,7 @@
         .actualite h2 {
             font-size: medium;
         }
-        		.chercheurs-groupes {
+        .chercheurs-groupes {
 			display: flex; /* Utilise Flexbox pour afficher les colonnes */
 			justify-content: space-between; /* Sépare les colonnes */
 			gap: 20px; /* Espace entre les colonnes */
@@ -249,7 +260,7 @@
 
     <div class="lang-search">
         <div class="lang-switcher">
-            <a href="/">FR</a> |
+            <a href="/static">FR</a> |
         </div>
     </div>
 </header>
@@ -263,42 +274,44 @@
 
     <div class="actualites_evenements">
         <h2>Actualités : </h2>
-        <div class="actualite">
-                <h1>Décembre 2025 </h1>
-                <h2>Publication de l'article : Simple methods for uncertainty estimation in neural networks applied to spectral data processing</h2>
-            <p>
-                L’année s’est conclue par la publication de l’article « Simple methods for uncertainty estimation in neural networks applied to spectral data processing » dans Chemometrics and Intelligent Laboratory Systems, signé par Maxime Metz, khadija Lamdibih, Jean-Michel Roger, David Esteve, Ryad Bendoula et Florent Abdelghafour.
-            </p>
-        </div>
-        <div class="actualite">
-                <h1>Octobre 2025 | Tirana</h1>
-                <h2>Participation à la conférence SenseAIfood</h2>
-            <p>
-                Le LabCom AiLoY a participé à deux conférences majeures consacrées à la spectroscopie et à la chimiométrie. À ICNIRS 2025 (Rome), Maxime Metz a présenté un poster sur la classification des plastiques, Florent Abdelghafour a exposé des travaux sur l’apprentissage profond appliqué aux données NIRS, et Ivy Tumoine a proposé une étude sur la génération de données synthétiques. Aux 26ᵉ Rencontres Héliospir (Montpellier), l’équipe a présenté plusieurs communications orales autour du Deep-Chemometrics, comparant notamment différentes stratégies de prétraitement et d’augmentation de données.
-            </p>
-        </div>
-        <div class="actualite">
-                <h1>Juin 2025 | Rome / Montpellier</h1>
-                <h2>Participation aux conférences ICNIRS et Héliospir</h2>
-            <p>
-                Le LabCom AiLoY a pris part à la conférence SenseAIfood à Tirana, consacrée à l’intelligence artificielle et aux technologies spectrales pour l’agroalimentaire. Daniele Tanzilli a  présenté ses travaux sur les stratégies d’agrégation de prétraitements pour l’analyse spectrale. Florent Abdelghafour a présenté une comparaison de différentes achitechtures neuronales pour les données spectrales.
-            </p>
-        </div>
-        <div class="actualite">
-                <h1>04/11/2024 | Pertuis</h1>
-                <h2>Début de thèse d'Ivy Tumoine</h2>
-            <p>
-                Début de thèse de Ivy Tumoine sur l'auto-supervision appliqué aux données hyper-spectrales.
-                Les premiers travaux se concentreront sur les transformations à appliquer aux données spectrales.
-            </p>
-        </div>
-        <div class="actualite">
-                <h1>04/11/2024 | Montpellier</h1>
-                <h2>Participation à HELIOSPIR</h2>
-            <p>
-                Présentation de poster sur l'utilisation de l'active learning pour calibrer des spectromètres entre eux.
-                Sessions d'échanges et workshops.
-            </p>
+        <div class="actualites-liste">
+            <div class="actualite">
+                    <h1>Décembre 2025 </h1>
+                    <h2>Publication de l'article : Simple methods for uncertainty estimation in neural networks applied to spectral data processing</h2>
+                <p>
+                    L’année s’est conclue par la publication de l’article « Simple methods for uncertainty estimation in neural networks applied to spectral data processing » dans Chemometrics and Intelligent Laboratory Systems, signé par Maxime Metz, khadija Lamdibih, Jean-Michel Roger, David Esteve, Ryad Bendoula et Florent Abdelghafour.
+                </p>
+            </div>
+            <div class="actualite">
+                    <h1>Octobre 2025 | Tirana</h1>
+                    <h2>Participation à la conférence SenseAIfood</h2>
+                <p>
+                    Le LabCom AiLoY a participé à deux conférences majeures consacrées à la spectroscopie et à la chimiométrie. À ICNIRS 2025 (Rome), Maxime Metz a présenté un poster sur la classification des plastiques, Florent Abdelghafour a exposé des travaux sur l’apprentissage profond appliqué aux données NIRS, et Ivy Tumoine a proposé une étude sur la génération de données synthétiques. Aux 26ᵉ Rencontres Héliospir (Montpellier), l’équipe a présenté plusieurs communications orales autour du Deep-Chemometrics, comparant notamment différentes stratégies de prétraitement et d’augmentation de données.
+                </p>
+            </div>
+            <div class="actualite">
+                    <h1>Juin 2025 | Rome / Montpellier</h1>
+                    <h2>Participation aux conférences ICNIRS et Héliospir</h2>
+                <p>
+                    Le LabCom AiLoY a pris part à la conférence SenseAIfood à Tirana, consacrée à l’intelligence artificielle et aux technologies spectrales pour l’agroalimentaire. Daniele Tanzilli a  présenté ses travaux sur les stratégies d’agrégation de prétraitements pour l’analyse spectrale. Florent Abdelghafour a présenté une comparaison de différentes achitechtures neuronales pour les données spectrales.
+                </p>
+            </div>
+            <div class="actualite">
+                    <h1>04/11/2024 | Pertuis</h1>
+                    <h2>Début de thèse d'Ivy Tumoine</h2>
+                <p>
+                    Début de thèse de Ivy Tumoine sur l'auto-supervision appliqué aux données hyper-spectrales.
+                    Les premiers travaux se concentreront sur les transformations à appliquer aux données spectrales.
+                </p>
+            </div>
+            <div class="actualite">
+                    <h1>04/11/2024 | Montpellier</h1>
+                    <h2>Participation à HELIOSPIR</h2>
+                <p>
+                    Présentation de poster sur l'utilisation de l'active learning pour calibrer des spectromètres entre eux.
+                    Sessions d'échanges et workshops.
+                </p>
+            </div>
         </div>
     </div>
     
