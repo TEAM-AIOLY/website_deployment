@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0068915-4733-472f-9cde-be2b57768a16" name="Changes" comment="" />
+    <list default="true" id="a0068915-4733-472f-9cde-be2b57768a16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/acceuil/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/acceuil/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualites/apprentissage_autosup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/actualites/apprentissage_autosup/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualites/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/actualites/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualites/polarisation_mueller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/actualites/polarisation_mueller/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Daphne_HERAN/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Daphne_HERAN/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/David_ESTEVE/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/David_ESTEVE/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Florent_ABDELGHAFOUR/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Florent_ABDELGHAFOUR/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Gwenaele_LECORRE/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Gwenaele_LECORRE/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Ivy_TUMOINE/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Ivy_TUMOINE/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Jean_Michel_ROGER/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Jean_Michel_ROGER/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Maxime_METZ/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Maxime_METZ/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Nicolas_EMANUELY/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Nicolas_EMANUELY/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Ryad_BENDOULA/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Ryad_BENDOULA/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Tom_MONTAURIOL/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Tom_MONTAURIOL/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/Vincent_ROLLAND/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/Vincent_ROLLAND/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chercheurs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chercheurs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partenaires/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/partenaires/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,10 +87,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\n.emanuely\Documents\website_deployment" />
+      <recent name="C:\Users\n.emanuely\Documents\website_deployment\build3" />
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly" />
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\build" />
       <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\templates\pages" />
-      <recent name="C:\Users\n.emanuely\PycharmProjects\django_web_aioly\static" />
     </key>
   </component>
   <component name="RunManager" selected="Python.manage">
