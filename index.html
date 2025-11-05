@@ -119,27 +119,26 @@
             bottom: 0;
             width: 100%;
         }
-        .actualites_evenements_container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 2%;
-            grid-auto-rows: minmax(100px, auto);
-        }
         .actualites_evenements {
-            display: flex; /* Flexbox pour aligner l'image et le texte */
-            flex-direction: column;
-            justify-content: start;
-            border: 1px solid #ccc; /* Bordure autour de l'article */
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px; /* Espace entre les articles */
-            background-color: white;
-            height: 30ch;
-            overflow-y: scroll;
+            margin-top: 2rem;
         }
+
+        .actualites-liste {
+            max-height: 400px; /* hauteur fixe de la zone */
+            overflow-y: auto;  /* active la barre de défilement verticale */
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
         .actualite {
-            border-bottom: 1px solid #ccc;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
         }
+
         .actualite h1 {
             color: grey;
             font-size: small;
@@ -147,7 +146,7 @@
         .actualite h2 {
             font-size: medium;
         }
-        		.chercheurs-groupes {
+        .chercheurs-groupes {
 			display: flex; /* Utilise Flexbox pour afficher les colonnes */
 			justify-content: space-between; /* Sépare les colonnes */
 			gap: 20px; /* Espace entre les colonnes */
@@ -258,7 +257,7 @@
 
     <div class="lang-search">
         <div class="lang-switcher">
-            <a href="/static">FR</a> |
+            <a href="/">FR</a> |
         </div>
     </div>
 </header>
