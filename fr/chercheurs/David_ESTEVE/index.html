@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chercheur - Labcom AIOLY</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #002F5C;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            padding: 20px 20px; /* padding identique pour tous */
+            border-radius: 10px; /* arrondi doux */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a.active {
+            background-color: white;
+            color: #002F5C;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 80px;
+        }
+
+        .logo_inrae img {
+            height: 40px;
+            margin-right: 80px;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+        .article {
+            display: flex; /* Flexbox pour aligner l'image et le texte */
+            border: 1px solid #ccc; /* Bordure autour de l'article */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px; /* Espace entre les articles */
+            align-items: center; /* Aligner les items au début */
+            background-color: white;
+        }
+
+        .article img {
+            max-width: 150px; /* Largeur maximale de l'image */
+            width: auto; /* Largeur automatique pour garder le ratio */
+            height: auto; /* Hauteur automatique pour garder le ratio */
+            object-fit: cover; /* Couvrir tout l'espace disponible tout en gardant le ratio */
+            margin-right: 15px; /* Espace entre l'image et le texte */
+            border-radius: 5px; /* Coins arrondis pour l'image */
+        }
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* ou space-between si tu veux les écarter */
+            gap: 40px; /* espace entre les logos */
+        }
+        footer {
+            background-color: #002F5C;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .actualites_evenements {
+            margin-top: 2rem;
+        }
+
+        .actualites-liste {
+            max-height: 400px; /* hauteur fixe de la zone */
+            overflow-y: auto;  /* active la barre de défilement verticale */
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .actualite {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .actualite:hover {
+            transform: scale(1.0);
+        }
+        .actualite h1 {
+            color: grey;
+            font-size: small;
+        }
+        .actualite h2 {
+            font-size: medium;
+        }
+        .chercheurs-groupes {
+			display: flex; /* Utilise Flexbox pour afficher les colonnes */
+			justify-content: space-between; /* Sépare les colonnes */
+			gap: 20px; /* Espace entre les colonnes */
+		}
+
+		.groupe {
+			flex: 1; /* Chaque colonne prend la même largeur */
+			padding: 15px;
+			border: 1px solid #ccc; /* Optionnel : ajoute une bordure autour des colonnes */
+			border-radius: 5px; /* Coins arrondis */
+		}
+
+		.groupe h2 {
+			text-align: center; /* Centre le titre du groupe */
+		}
+
+		.profile {
+			display: flex;
+			margin-bottom: 20px;
+		}
+
+		.profile img {
+			max-width: 100px; /* Ajustez la taille des images */
+			margin-right: 15px;
+			border-radius: 5px;
+		}
+
+        /* Sélecteur de langue */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .lang-switcher select {
+            background-color: #002F5C;
+            color: white;
+            border: none;
+            font-size: 14px;
+            padding: 6px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lang-switcher select:hover {
+            background-color: #004080;
+        }
+
+
+        @media (max-width: 768px) {
+			.chercheurs-groupes {
+				flex-direction: column; /* Passe à une colonne sur les petits écrans */
+			}
+		}
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+        .article .social-media {
+			margin-top: 10px; /* Ajoute un peu d'espace entre le texte et les icônes */
+			display: flex;
+		}
+
+		.article .social-media a {
+			margin-right: 10px; /* Espace entre les icônes */
+		}
+
+		.article .social-icon {
+			width: 24px;
+			height: 24px;
+			transition: transform 0.3s ease;
+		}
+
+		.article .social-icon:hover {
+			transform: scale(3); /* Agrandit l'icône au survol */
+		}
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+			font-size: 1.1em;
+        }
+		th{
+		background-color: #f4f4f4;
+		}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/fr/" class="">Accueil</a>
+            </li>
+            <li>
+                <a href="/fr/actualites/" class="">Actualités</a>
+            </li>
+            <li>
+                <a href="/fr/chercheurs/" class="active">Chercheurs</a>
+            </li>
+            <li>
+                <a href="/fr/partenaires/" class="">Partenaires</a>
+            </li>
+            <li>
+                <a href="/fr/contact/" class="">Nous contacter</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="logos-container">
+        <div class="logo">
+            <img src="/website_deployment/static/Images/Image1.png" alt="Logo Labcom">
+        </div>
+        <div class="logo_inrae">
+            <a href="https://www.inrae.fr" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_INRAE_Transparent.png" alt="Logo INRAE">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="https://www.pellencst.com" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_pellenc.png" alt="Logo Pellenc">
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌍 Sélecteur de langue simple -->
+    <div class="lang-switcher">
+        <form method="get" id="lang-form">
+            <select name="lang" onchange="changeLang(this)">
+                <option value="fr" selected>Français</option>
+                <option value="en" >English</option>
+            </select>
+        </form>
+    </div>
+
+    <script>
+        function changeLang(select) {
+            const lang = select.value;
+            // Redirection vers la page correspondante dans la langue choisie
+            const pathParts = window.location.pathname.split('/').filter(p => p);
+            // Remplace la première partie (la langue) par la nouvelle langue
+            if(pathParts.length > 0 && ['fr','en'].includes(pathParts[0])) {
+                pathParts[0] = lang;
+            } else {
+                pathParts.unshift(lang);
+            }
+            window.location.href = '/' + pathParts.join('/') + '/';
+        }
+    </script>
+</header>
+
+<div class="container main-content">
+    
+
+
+<div class="container">
+    <div class="profile">
+        <!-- Image du chercheur -->
+        <img src="/website_deployment/static/Images/David_ESTEVE.png"
+             alt="David ESTEVE"
+             style="
+                 max-width: 200px;
+                 width: auto;
+                 height: 150px;
+                 object-fit: cover;
+                 margin-right: 15px;
+                 border-radius: 5px;
+             ">
+
+        <!-- Détails du chercheur -->
+        <div>
+            <h2>ESTEVE David</h2>
+            <p><strong>Domaine de recherche :</strong> Matériaux et optique</p>
+
+            
+
+            
+                <p><strong>Brevets récents :</strong></p>
+                <ul>
+                    
+                        <li>FR3148921A1</li>
+                    
+                        <li>EP4605146A1</li>
+                    
+                        <li>US2014245955</li>
+                    
+                        <li>US2014007814</li>
+                    
+                        <li>US2015247234</li>
+                    
+                        <li>US2015307984</li>
+                    
+                        <li>FR3075854</li>
+                    
+                </ul>
+            
+
+            <p><strong>Biographie :</strong></p>
+            
+                <p>Ingénieur Polytech Paris Sud, spécialisé en sciences et génie des matériaux, et docteur en optique appliquée aux couches minces (2010). Il a 15 ans d&#x27;expérience dans le milieu des semi-conducteurs, et a rejoint Pellenc ST en 2022. Il a amélioré l&#x27;efficacité énergétique des machines en proposant des nouvelles architectures pneumatiques. Il a également proposé un nouveau système de gestion des perturbations aérauliques permettant d&#x27;améliorer significativement l&#x27;efficacité de tri des films et papiers. Il conduit actuellement plusieurs développements autour de technologies clefs de détection pour l&#x27;entreprise, notamment des systèmes de spectroscopie proche et moyen infrarouge. Il défini, oriente et encadre les travaux de R&amp;D de l&#x27;équipe composée de 11 ingénieurs, dont 1 docteur et 3 doctorants dans les domaines de l&#x27;intelligence artificielle, de la vision par ordinateur et des technologies de détection.</p>
+            
+
+            
+
+            
+                <p>
+                    <strong>LinkedIn :</strong>
+                    <a href="https://fr.linkedin.com/in/desteve" target="_blank">https://fr.linkedin.com/in/desteve</a>
+                </p>
+            
+        </div>
+    </div>
+
+    <!-- Lien de retour -->
+    <p>
+        <a href="/fr/chercheurs/">&larr; Retour à la liste des chercheurs</a>
+    </p>
+</div>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Labcom AIOLY. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

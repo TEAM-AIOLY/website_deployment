@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-supervised learning - Labcom AIOLY</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #002F5C;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            padding: 20px 20px; /* padding identique pour tous */
+            border-radius: 10px; /* arrondi doux */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a.active {
+            background-color: white;
+            color: #002F5C;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 80px;
+        }
+
+        .logo_inrae img {
+            height: 40px;
+            margin-right: 80px;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+        .article {
+            display: flex; /* Flexbox pour aligner l'image et le texte */
+            border: 1px solid #ccc; /* Bordure autour de l'article */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px; /* Espace entre les articles */
+            align-items: center; /* Aligner les items au début */
+            background-color: white;
+        }
+
+        .article img {
+            max-width: 150px; /* Largeur maximale de l'image */
+            width: auto; /* Largeur automatique pour garder le ratio */
+            height: auto; /* Hauteur automatique pour garder le ratio */
+            object-fit: cover; /* Couvrir tout l'espace disponible tout en gardant le ratio */
+            margin-right: 15px; /* Espace entre l'image et le texte */
+            border-radius: 5px; /* Coins arrondis pour l'image */
+        }
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* ou space-between si tu veux les écarter */
+            gap: 40px; /* espace entre les logos */
+        }
+        footer {
+            background-color: #002F5C;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .actualites_evenements {
+            margin-top: 2rem;
+        }
+
+        .actualites-liste {
+            max-height: 400px; /* hauteur fixe de la zone */
+            overflow-y: auto;  /* active la barre de défilement verticale */
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .actualite {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .actualite:hover {
+            transform: scale(1.0);
+        }
+        .actualite h1 {
+            color: grey;
+            font-size: small;
+        }
+        .actualite h2 {
+            font-size: medium;
+        }
+        .chercheurs-groupes {
+			display: flex; /* Utilise Flexbox pour afficher les colonnes */
+			justify-content: space-between; /* Sépare les colonnes */
+			gap: 20px; /* Espace entre les colonnes */
+		}
+
+		.groupe {
+			flex: 1; /* Chaque colonne prend la même largeur */
+			padding: 15px;
+			border: 1px solid #ccc; /* Optionnel : ajoute une bordure autour des colonnes */
+			border-radius: 5px; /* Coins arrondis */
+		}
+
+		.groupe h2 {
+			text-align: center; /* Centre le titre du groupe */
+		}
+
+		.profile {
+			display: flex;
+			margin-bottom: 20px;
+		}
+
+		.profile img {
+			max-width: 100px; /* Ajustez la taille des images */
+			margin-right: 15px;
+			border-radius: 5px;
+		}
+
+        /* Sélecteur de langue */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .lang-switcher select {
+            background-color: #002F5C;
+            color: white;
+            border: none;
+            font-size: 14px;
+            padding: 6px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lang-switcher select:hover {
+            background-color: #004080;
+        }
+
+
+        @media (max-width: 768px) {
+			.chercheurs-groupes {
+				flex-direction: column; /* Passe à une colonne sur les petits écrans */
+			}
+		}
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+        .article .social-media {
+			margin-top: 10px; /* Ajoute un peu d'espace entre le texte et les icônes */
+			display: flex;
+		}
+
+		.article .social-media a {
+			margin-right: 10px; /* Espace entre les icônes */
+		}
+
+		.article .social-icon {
+			width: 24px;
+			height: 24px;
+			transition: transform 0.3s ease;
+		}
+
+		.article .social-icon:hover {
+			transform: scale(3); /* Agrandit l'icône au survol */
+		}
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+			font-size: 1.1em;
+        }
+		th{
+		background-color: #f4f4f4;
+		}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/en/" class="">Welcome</a>
+            </li>
+            <li>
+                <a href="/en/actualites/" class="">News</a>
+            </li>
+            <li>
+                <a href="/en/chercheurs/" class="">Researchers</a>
+            </li>
+            <li>
+                <a href="/en/partenaires/" class="">Partners</a>
+            </li>
+            <li>
+                <a href="/en/contact/" class="">Contact us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="logos-container">
+        <div class="logo">
+            <img src="/website_deployment/static/Images/Image1.png" alt="Logo Labcom">
+        </div>
+        <div class="logo_inrae">
+            <a href="https://www.inrae.fr" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_INRAE_Transparent.png" alt="Logo INRAE">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="https://www.pellencst.com" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_pellenc.png" alt="Logo Pellenc">
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌍 Sélecteur de langue simple -->
+    <div class="lang-switcher">
+        <form method="get" id="lang-form">
+            <select name="lang" onchange="changeLang(this)">
+                <option value="fr" >Français</option>
+                <option value="en" selected>English</option>
+            </select>
+        </form>
+    </div>
+
+    <script>
+        function changeLang(select) {
+            const lang = select.value;
+            // Redirection vers la page correspondante dans la langue choisie
+            const pathParts = window.location.pathname.split('/').filter(p => p);
+            // Remplace la première partie (la langue) par la nouvelle langue
+            if(pathParts.length > 0 && ['fr','en'].includes(pathParts[0])) {
+                pathParts[0] = lang;
+            } else {
+                pathParts.unshift(lang);
+            }
+            window.location.href = '/' + pathParts.join('/') + '/';
+        }
+    </script>
+</header>
+
+<div class="container main-content">
+    
+
+<!-- Contenu principal -->
+<div class="container main-content">
+
+    <!-- Article 1 -->
+    <div class="article" style="display: flex; align-items: flex-start;">
+        <img src="/website_deployment/static/Images/selfsupdino.png"
+             alt="Illustration Article 1"
+             style="vertical-align: top; margin-right: 20px;">
+        <div>
+            <h2>Self-supervised learning</h2>
+            <p>
+                
+                L'apprentissage auto-supervisé est une méthode d'apprentissage profond qui tire parti de larges bases de données non annotées.
+                Les modèles entraînés en auto-supervision présentent les meilleures performances dans le traitement du langage, notamment avec les chatbots, et d'excellentes performances en vision par ordinateur.
+                
+            </p>
+
+            <h3>Self-supervised learning for text and image</h3>
+            <p>
+                
+                Pour entraîner un modèle à faire une tâche souhaitée, la méthode classique d'apprentissage consiste à minimiser l'erreur entre la prédiction du modèle et celle d'un annotateur humain.
+                Obtenir une annotation est souvent long, pénible et extrêmement onéreux — c'est la principale raison pour laquelle les modèles auto-supervisés sont si intéressants.
+                
+            </p>
+            <p>
+                
+                On peut voir un modèle neuronal profond comme la succession d'un encodeur et d'un décodeur.
+                L'encodeur permet d'obtenir des représentations des données et le décodeur effectue la tâche souhaitée.
+                La figure 1 illustre cela avec le modèle AlexNet : une succession de convolutions permet d'obtenir une représentation de l'image, puis quelques couches denses décodent cette information afin de déterminer la classe correspondante.
+                
+            </p>
+
+            <div class="figure">
+                <img src="/website_deployment/static/Images/enc_dec.png"
+                     alt="Illustration of the encoder-decoder"
+                     style="max-width: 50%; margin-right: 30%; padding-top: 10px;">
+            </div>
+
+            <p>
+                
+                Pour utiliser un modèle entraîné en auto-supervision afin de réaliser une tâche donnée, on transfère l'encodeur du modèle et on y ajoute un décodeur adapté.
+                Transférer l'encodeur consiste à reprendre son architecture et ses poids — c'est un simple copié-collé.
+                L'ensemble encodeur + décodeur est ensuite entraîné à accomplir la tâche souhaitée, comme illustré en figure 2.
+                L'idée est qu'un encodeur entraîné en auto-supervision produit de meilleures représentations des données qu'un encodeur initialisé aléatoirement.
+                
+            </p>
+
+            <div class="figure">
+                <img src="/website_deployment/static/Images/auto_sup_entr.png"
+                     alt="Illustration of encoder transfer"
+                     style="max-width: 55%; margin-right: 30%; padding-top: 10px;">
+            </div>
+
+            <p>
+                
+                Afin d'apprendre à fournir de bonnes représentations, les modèles entraînés en auto-supervision apprennent sur une <i>tâche prétexte</i>.
+                Cette tâche prétexte est fondée sur l'observation des données et ne requiert aucune annotation manuelle.
+                Il existe trois grandes familles de tâches prétextes :
+                
+            </p>
+
+            <ul>
+                <li>
+                    
+                    <b>Les tâches de reconstruction.</b> À partir d'une donnée dont on a masqué automatiquement une partie de l'information, le modèle doit reconstruire la donnée complète.
+                    Pour les images, cela peut consister à masquer aléatoirement un groupe de pixels ; pour le texte, à cacher certains mots.
+                    
+                </li>
+                <li>
+                    
+                    <b>Les tâches contrastives.</b> Le modèle est entraîné à obtenir des représentations proches pour des images similaires (paires positives) et éloignées pour des images différentes (paires négatives).
+                    Les paires positives sont obtenues en appliquant des transformations (ou augmentations de données) à une même image.
+                    
+                </li>
+                <li>
+                    
+                    <b>Les tâches d'invariance.</b> Le modèle apprend à obtenir des représentations proches pour des images similaires.
+                    Une solution triviale serait de considérer toutes les images comme identiques — un phénomène appelé <i>effondrement</i>.
+                    Pour éviter cela, des contraintes de régularisation sont appliquées durant l'entraînement.
+                    
+                </li>
+            </ul>
+
+            <h3>Self-supervised learning applied to spectral data</h3>
+            <p>
+                
+                Si l'apprentissage auto-supervisé est très populaire pour les images et le texte, il est encore quasi inexistant pour les données spectrales.
+                C'est pourquoi PellencST et l'équipe COMIC ont lancé une thèse intitulée « Apprentissage auto-supervisé appliqué aux données spectrales pour le tri des déchets ».
+                Cette thèse, réalisée par Ivy Tumoine, est co-dirigée par Ryad Bendoula et Jean-Michel Roger, et co-encadrée par Maxime Metz et Florent Abdelghafour.
+                
+            </p>
+
+            <p>
+                
+                L'adaptation de ces approches auto-supervisées nécessite de lever trois verrous méthodologiques majeurs :
+                
+            </p>
+
+            <ul>
+                <li>
+                    
+                    <b>Augmentation de données spectrales.</b> Les approches auto-supervisées cherchent à rendre les modèles invariants à certaines perturbations via des augmentations de données.
+                    Cependant, peu de recherches concernent les augmentations adaptées aux spectres.
+                    Comme ces transformations influencent directement les connaissances apprises, elles doivent être conçues en tenant compte de la nature des données spectrales : composition, dépendances lointaines, conditions de mesure, etc.
+                    
+                </li>
+                <li>
+                    
+                    <b>Réseaux neuronaux adaptés aux données spectrales.</b> Ces approches nécessiteront sans doute des architectures mieux adaptées aux spectres.
+                    Si de nombreux réseaux existent pour les images et les vidéos, peu sont optimisés pour les données spectrales.
+                    Les ResNet, par exemple, ne prennent pas toujours en compte les corrélations lointaines entre longueurs d’onde.
+                    De nouvelles architectures comme les Transformers (SWIN, ViT, etc.) devront être explorées.
+                    
+                </li>
+                <li>
+                    
+                    <b>Stratégies d'auto-supervision adaptées aux données spectrales.</b> Les stratégies utilisées dans d'autres domaines ne tiennent pas compte de la structure spectrale.
+                    Par exemple, le masquage spatial classique n'est pas adapté car certaines signatures spectrales ne dépendent que d'une gamme de longueurs d'onde.
+                    L'objectif sera donc de concevoir de nouvelles stratégies d'auto-supervision adaptées, par exemple en masquant une partie des structures latentes.
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<a href="/en/actualites/">Back</a>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Labcom AIOLY. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
