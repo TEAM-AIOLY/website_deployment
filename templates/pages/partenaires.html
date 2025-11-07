@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Partenaires - Labcom AIOLY{% endblock %}
+{% block title %}{% trans "Partenaires - Labcom AIOLY" %}{% endblock %}
 
 {% block content %}
 <!-- Contenu principal -->
 <div class="container main-content">
-    <h1>Bienvenue sur Labcom AIOLY</h1>
-    <p>Ce laboratoire commun est un partenariat entre les deux institutions de renommées mondiales que sont :</p>
+    <h1>{% trans "Bienvenue sur Labcom AIOLY" %}</h1>
+    <p>{% trans "Ce laboratoire commun est un partenariat entre les deux institutions de renommée mondiale que sont :" %}</p>
 
-
+    <!-- Article 1 -->
     <div class="article">
-		<a href="href=https://www.inrae.fr/">
-			<img src="{% static 'Images/Logo_INRAE_Transparent.png' %}" alt="Illustration Article 1"> <!-- Image de l'article 1 -->
-		</a>
-		<div>
+        <a href="https://www.inrae.fr/" target="_blank">
+            <img src="{% static 'Images/Logo_INRAE_Transparent.png' %}" alt="{% trans 'Logo INRAE' %}">
+        </a>
+        <div>
             <h2>INRAE Montpellier</h2>
             <p>2 Pl. Pierre Viala, 34000 Montpellier</p>
         </div>
@@ -22,26 +23,25 @@
 
     <!-- Article 2 -->
     <div class="article">
-		<a href="href=https://www.pellencst.com/">
-			<img src="{% static 'Images/Logo_pellenc.png' %}" alt="Illustration Article 2"> <!-- Image de l'article 2 -->
-		</a>
-		<div>
+        <a href="https://www.pellencst.com/" target="_blank">
+            <img src="{% static 'Images/Logo_pellenc.png' %}" alt="{% trans 'Logo Pellenc ST' %}">
+        </a>
+        <div>
             <h2>Pellenc ST</h2>
             <p>125 Rue François Gernelle, 84120 Pertuis</p>
-			<div class="social-media">
-				<a href="https://x.com/pellencst?lang=fr" target="_blank">
-					<img src="{% static 'Images\X_logo.png'%}" alt="Facebook" class="social-icon">
-				</a>
-				<a href="https://www.youtube.com/@PellencSTwebTV" target="_blank">
-					<img src="{% static 'Images\YT_logo.png'%}" alt="Twitter" class="social-icon">
-				</a>
-				<a href="https://www.linkedin.com/company/pellenc-selective-technologies/posts/?feedView=all" target="_blank">
-					<img src="{% static 'Images\Linkedin_logo.png'%}" alt="LinkedIn" class="social-icon">
-				</a>
-			</div>
+            <div class="social-media">
+                <a href="https://x.com/pellencst?lang=fr" target="_blank">
+                    <img src="{% static 'Images/X_logo.png' %}" alt="X" class="social-icon">
+                </a>
+                <a href="https://www.youtube.com/@PellencSTwebTV" target="_blank">
+                    <img src="{% static 'Images/YT_logo.png' %}" alt="YouTube" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/company/pellenc-selective-technologies/posts/?feedView=all" target="_blank">
+                    <img src="{% static 'Images/Linkedin_logo.png' %}" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
         </div>
     </div>
-
 
 </div>
 

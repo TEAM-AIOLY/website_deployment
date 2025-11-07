@@ -1,48 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Chercheurs - Labcom AIOLY{% endblock %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %}{% trans "Chercheurs - Labcom AIOLY" %}{% endblock %}
 
 {% block content %}
-<!-- Contenu principal : Liste des chercheurs en deux colonnes -->
 <div class="container main-content">
-    <h1>Nos Chercheuses et Chercheurs</h1>
-    <p>Découvrez les membres de notre équipe de recherche de part et d'autres du Labcom.</p>
+    <h1>{% trans "Nos Chercheuses et Chercheurs" %}</h1>
+    <p>{% trans "Découvrez les membres de notre équipe de recherche de part et d'autres du Labcom." %}</p>
 
-    <!-- Conteneur Flex pour les deux colonnes -->
     <div class="chercheurs-groupes">
-        <!-- Colonne Groupe A -->
+        <!-- Colonne INRAE -->
         <div class="groupe">
-            <h2>INRAE</h2>
+            <h2>{% trans "INRAE" %}</h2>
             {% for key, chercheur in chercheurs.items %}
                 {% if chercheur.Etablissement == 'INRAE' %}
                     <div class="profile">
-                        <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">
+                        <a href="/{{ LANGUAGE_CODE }}/chercheurs/{{ key }}/">
                             <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
                         </a>
                         <div>
-                            <h3>{{ chercheur.Prenom }} {{ chercheur.Nom }}</h3>
-                            <p>{{ chercheur.Description }}</p>
-                            <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
+                            <h3>{{chercheur.Prenom}} {{chercheur.Nom}}</h3>
+                            <p>{{chercheur.Description }}</p>
+                            <a href="/{{ LANGUAGE_CODE }}/chercheurs/{{ key }}/">{% trans "Voir plus" %}</a>
                         </div>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
 
-        <!-- Colonne Groupe B -->
+        <!-- Colonne Pellenc ST -->
         <div class="groupe">
-            <h2>Pellenc ST</h2>
+            <h2>{% trans "Pellenc ST" %}</h2>
             {% for key, chercheur in chercheurs.items %}
                 {% if chercheur.Etablissement == 'PST' %}
                     <div class="profile">
-                        <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">
+                        <a href="/{{ LANGUAGE_CODE }}/chercheurs/{{ key }}/">
                             <img src="{% static 'Images/'|add:chercheur.Image_path %}" alt="{{ chercheur.Nom }}">
                         </a>
                         <div>
-                            <h3>{{ chercheur.Prenom }} {{ chercheur.Nom }}</h3>
-                            <p>{{ chercheur.Description }}</p>
-                            <a href="/website_deployment{% url 'chercheurs_page' chercheur_name=key %}">Voir plus</a>
+                            <h3>{{chercheur.Prenom}} {{chercheur.Nom}}</h3>
+                            <p>{{chercheur.Description }}</p>
+                            <a href="/{{ LANGUAGE_CODE }}/chercheurs/{{ key }}/">{% trans "Voir plus" %}</a>
                         </div>
                     </div>
                 {% endif %}
@@ -50,6 +51,4 @@
         </div>
     </div>
 </div>
-
-
 {% endblock %}

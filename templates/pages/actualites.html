@@ -1,82 +1,115 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Actualités - Labcom AIOLY{% endblock %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %}{% trans "Actualités - Labcom AIOLY" %}{% endblock %}
 
 {% block content %}
-<!-- Contenu principal -->
 <div class="container main-content">
-    <h1>Bienvenue sur Labcom AIOLY</h1>
-    <p>Découvrez les dernières nouvelles, articles et informations sur nos projets de recherche et innovations.</p>
+    <h1>{% trans "Bienvenue sur Labcom AIOLY" %}</h1>
+    <p>{% trans "Découvrez les dernières nouvelles, articles et informations sur nos projets de recherche et innovations." %}</p>
 
+    <!-- Section Actualités -->
     <div class="actualites_evenements">
-        <h2>Actualités : </h2>
+        <h2>{% trans "Actualités :" %}</h2>
         <div class="actualites-liste">
+
+            <!-- Article 1 -->
             <div class="actualite">
-                    <h1>Décembre 2025 </h1>
-                    <h2>Publication de l'article : Simple methods for uncertainty estimation in neural networks applied to spectral data processing</h2>
+                <h1>{% trans "Décembre 2025" %}</h1>
+                <h2>{% trans "Publication de l'article : Simple methods for uncertainty estimation in neural networks applied to spectral data processing" %}</h2>
                 <p>
-                    L’année s’est conclue par la publication de l’article « Simple methods for uncertainty estimation in neural networks applied to spectral data processing » dans Chemometrics and Intelligent Laboratory Systems, signé par Maxime Metz, khadija Lamdibih, Jean-Michel Roger, David Esteve, Ryad Bendoula et Florent Abdelghafour.
+                    {% blocktrans %}
+                    L’année s’est conclue par la publication de l’article « Simple methods for uncertainty estimation in neural networks applied to spectral data processing »
+                    dans Chemometrics and Intelligent Laboratory Systems, signé par Maxime Metz, Khadija Lamdibih, Jean-Michel Roger, David Esteve, Ryad Bendoula et Florent Abdelghafour.
+                    {% endblocktrans %}
                 </p>
             </div>
+
+            <!-- Article 2 -->
             <div class="actualite">
-                    <h1>Octobre 2025 | Tirana</h1>
-                    <h2>Participation à la conférence SenseAIfood</h2>
+                <h1>{% trans "Octobre 2025 | Tirana" %}</h1>
+                <h2>{% trans "Participation à la conférence SenseAIfood" %}</h2>
                 <p>
-                    Le LabCom AiLoY a participé à deux conférences majeures consacrées à la spectroscopie et à la chimiométrie. À ICNIRS 2025 (Rome), Maxime Metz a présenté un poster sur la classification des plastiques, Florent Abdelghafour a exposé des travaux sur l’apprentissage profond appliqué aux données NIRS, et Ivy Tumoine a proposé une étude sur la génération de données synthétiques. Aux 26ᵉ Rencontres Héliospir (Montpellier), l’équipe a présenté plusieurs communications orales autour du Deep-Chemometrics, comparant notamment différentes stratégies de prétraitement et d’augmentation de données.
+                    {% blocktrans %}
+                    Le LabCom AiLoY a participé à deux conférences majeures consacrées à la spectroscopie et à la chimiométrie.
+                    À ICNIRS 2025 (Rome), Maxime Metz a présenté un poster sur la classification des plastiques,
+                    Florent Abdelghafour a exposé des travaux sur l’apprentissage profond appliqué aux données NIRS,
+                    et Ivy Tumoine a proposé une étude sur la génération de données synthétiques.
+                    Aux 26ᵉ Rencontres Héliospir (Montpellier), l’équipe a présenté plusieurs communications orales autour du Deep-Chemometrics,
+                    comparant notamment différentes stratégies de prétraitement et d’augmentation de données.
+                    {% endblocktrans %}
                 </p>
             </div>
+
+            <!-- Article 3 -->
             <div class="actualite">
-                    <h1>Juin 2025 | Rome / Montpellier</h1>
-                    <h2>Participation aux conférences ICNIRS et Héliospir</h2>
+                <h1>{% trans "Juin 2025 | Rome / Montpellier" %}</h1>
+                <h2>{% trans "Participation aux conférences ICNIRS et Héliospir" %}</h2>
                 <p>
-                    Le LabCom AiLoY a pris part à la conférence SenseAIfood à Tirana, consacrée à l’intelligence artificielle et aux technologies spectrales pour l’agroalimentaire. Daniele Tanzilli a  présenté ses travaux sur les stratégies d’agrégation de prétraitements pour l’analyse spectrale. Florent Abdelghafour a présenté une comparaison de différentes achitechtures neuronales pour les données spectrales.
+                    {% blocktrans %}
+                    Le LabCom AiLoY a pris part à la conférence SenseAIfood à Tirana, consacrée à l’intelligence artificielle et aux technologies spectrales pour l’agroalimentaire.
+                    Daniele Tanzilli a présenté ses travaux sur les stratégies d’agrégation de prétraitements pour l’analyse spectrale.
+                    Florent Abdelghafour a présenté une comparaison de différentes architectures neuronales pour les données spectrales.
+                    {% endblocktrans %}
                 </p>
             </div>
+
+            <!-- Article 4 -->
             <div class="actualite">
-                    <h1>04/11/2024 | Pertuis</h1>
-                    <h2>Début de thèse d'Ivy Tumoine</h2>
+                <h1>{% trans "04/11/2024 | Pertuis" %}</h1>
+                <h2>{% trans "Début de thèse d'Ivy Tumoine" %}</h2>
                 <p>
-                    Début de thèse de Ivy Tumoine sur l'auto-supervision appliqué aux données hyper-spectrales.
+                    {% blocktrans %}
+                    Début de thèse de Ivy Tumoine sur l’auto-supervision appliquée aux données hyper-spectrales.
                     Les premiers travaux se concentreront sur les transformations à appliquer aux données spectrales.
+                    {% endblocktrans %}
                 </p>
             </div>
+
+            <!-- Article 5 -->
             <div class="actualite">
-                    <h1>04/11/2024 | Montpellier</h1>
-                    <h2>Participation à HELIOSPIR</h2>
+                <h1>{% trans "04/11/2024 | Montpellier" %}</h1>
+                <h2>{% trans "Participation à HELIOSPIR" %}</h2>
                 <p>
-                    Présentation de poster sur l'utilisation de l'active learning pour calibrer des spectromètres entre eux.
-                    Sessions d'échanges et workshops.
+                    {% blocktrans %}
+                    Présentation de poster sur l’utilisation de l’active learning pour calibrer des spectromètres entre eux.
+                    Sessions d’échanges et workshops.
+                    {% endblocktrans %}
                 </p>
             </div>
+
         </div>
     </div>
-    
-    
-    <h2>Nos sujets de recherche : </h2>
 
-    <!-- Article 1 -->
+    <!-- Section Sujets de recherche -->
+    <h2>{% trans "Nos sujets de recherche :" %}</h2>
+
+    <!-- Sujet 1 -->
     <div class="article">
-        <img src="{% static 'Images/selfsupdino.png' %}" alt="Illustration Article 1"> <!-- Image de l'article 1 -->
+        <img src="{% static 'Images/selfsupdino.png' %}" alt="{% trans 'Illustration Apprentissage auto-supervisé' %}">
         <div>
-            <h2>Apprentissage auto-supervisé</h2>
-            <p>L'apprentissage auto-supervisé est une méthode d'apprentissage qui ne recquiert pas d'annotation manuelle. Le modèle apprend des représentations utiles en s'appuyant sur des relations ou des structures internes présentes dans les données.</p>
-            <a href="/website_deployment{% url 'apprentissage_autosup' %}">Lire plus</a>
+            <h2>{% trans "Apprentissage auto-supervisé" %}</h2>
+            <p>
+                {% blocktrans %}
+                L'apprentissage auto-supervisé est une méthode d'apprentissage qui ne requiert pas d'annotation manuelle.
+                Le modèle apprend des représentations utiles en s'appuyant sur des relations ou des structures internes présentes dans les données.
+                {% endblocktrans %}
+            </p>
+            <a href="/{{ LANGUAGE_CODE }}/apprentissage_autosup/">{% trans "Lire plus" %}</a>
         </div>
     </div>
 
-    <!-- Article 2 -->
+    <!-- Sujet 2 -->
     <div class="article">
-        <img src="{% static 'Images\polarisation.png' %}" alt="Illustration Article 2"> <!-- Image de l'article 2 -->
+        <img src="{% static 'Images/polarisation.png' %}" alt="{% trans 'Illustration Polarisation de Mueller' %}">
         <div>
-            <h2>Polarisation de mueller</h2>
-            <a href="/website_deployment{% url 'polarisation_mueller' %}">Lire plus</a>
+            <h2>{% trans "Polarisation de Mueller" %}</h2>
+            <a href="/{{ LANGUAGE_CODE }}/polarisation_mueller/">{% trans "Lire plus" %}</a>
         </div>
     </div>
-
-
-    <!-- Article 3 -->
 
 </div>
-
 {% endblock %}

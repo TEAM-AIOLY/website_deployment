@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités - Labcom AIOLY</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #002F5C;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            padding: 20px 20px; /* padding identique pour tous */
+            border-radius: 10px; /* arrondi doux */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a.active {
+            background-color: white;
+            color: #002F5C;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 80px;
+        }
+
+        .logo_inrae img {
+            height: 40px;
+            margin-right: 80px;
+        }
+
+        .main-content {
+            padding: 20px 0;
+        }
+        .article {
+            display: flex; /* Flexbox pour aligner l'image et le texte */
+            border: 1px solid #ccc; /* Bordure autour de l'article */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px; /* Espace entre les articles */
+            align-items: center; /* Aligner les items au début */
+            background-color: white;
+        }
+
+        .article img {
+            max-width: 150px; /* Largeur maximale de l'image */
+            width: auto; /* Largeur automatique pour garder le ratio */
+            height: auto; /* Hauteur automatique pour garder le ratio */
+            object-fit: cover; /* Couvrir tout l'espace disponible tout en gardant le ratio */
+            margin-right: 15px; /* Espace entre l'image et le texte */
+            border-radius: 5px; /* Coins arrondis pour l'image */
+        }
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* ou space-between si tu veux les écarter */
+            gap: 40px; /* espace entre les logos */
+        }
+        footer {
+            background-color: #002F5C;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .actualites_evenements {
+            margin-top: 2rem;
+        }
+
+        .actualites-liste {
+            max-height: 400px; /* hauteur fixe de la zone */
+            overflow-y: auto;  /* active la barre de défilement verticale */
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .actualite {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .actualite:hover {
+            transform: scale(1.0);
+        }
+        .actualite h1 {
+            color: grey;
+            font-size: small;
+        }
+        .actualite h2 {
+            font-size: medium;
+        }
+        .chercheurs-groupes {
+			display: flex; /* Utilise Flexbox pour afficher les colonnes */
+			justify-content: space-between; /* Sépare les colonnes */
+			gap: 20px; /* Espace entre les colonnes */
+		}
+
+		.groupe {
+			flex: 1; /* Chaque colonne prend la même largeur */
+			padding: 15px;
+			border: 1px solid #ccc; /* Optionnel : ajoute une bordure autour des colonnes */
+			border-radius: 5px; /* Coins arrondis */
+		}
+
+		.groupe h2 {
+			text-align: center; /* Centre le titre du groupe */
+		}
+
+		.profile {
+			display: flex;
+			margin-bottom: 20px;
+		}
+
+		.profile img {
+			max-width: 100px; /* Ajustez la taille des images */
+			margin-right: 15px;
+			border-radius: 5px;
+		}
+
+        /* Sélecteur de langue */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .lang-switcher select {
+            background-color: #002F5C;
+            color: white;
+            border: none;
+            font-size: 14px;
+            padding: 6px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lang-switcher select:hover {
+            background-color: #004080;
+        }
+
+
+        @media (max-width: 768px) {
+			.chercheurs-groupes {
+				flex-direction: column; /* Passe à une colonne sur les petits écrans */
+			}
+		}
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+        .article .social-media {
+			margin-top: 10px; /* Ajoute un peu d'espace entre le texte et les icônes */
+			display: flex;
+		}
+
+		.article .social-media a {
+			margin-right: 10px; /* Espace entre les icônes */
+		}
+
+		.article .social-icon {
+			width: 24px;
+			height: 24px;
+			transition: transform 0.3s ease;
+		}
+
+		.article .social-icon:hover {
+			transform: scale(3); /* Agrandit l'icône au survol */
+		}
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+			font-size: 1.1em;
+        }
+		th{
+		background-color: #f4f4f4;
+		}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/fr/" class="">Accueil</a>
+            </li>
+            <li>
+                <a href="/fr/actualites/" class="">Actualités</a>
+            </li>
+            <li>
+                <a href="/fr/chercheurs/" class="">Chercheurs</a>
+            </li>
+            <li>
+                <a href="/fr/partenaires/" class="">Partenaires</a>
+            </li>
+            <li>
+                <a href="/fr/contact/" class="">Nous contacter</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="logos-container">
+        <div class="logo">
+            <img src="/website_deployment/static/Images/Image1.png" alt="Logo Labcom">
+        </div>
+        <div class="logo_inrae">
+            <a href="https://www.inrae.fr" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_INRAE_Transparent.png" alt="Logo INRAE">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="https://www.pellencst.com" target="_blank" rel="noopener noreferrer">
+                <img src="/website_deployment/static/Images/Logo_pellenc.png" alt="Logo Pellenc">
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌍 Sélecteur de langue simple -->
+    <div class="lang-switcher">
+        <form method="get" id="lang-form">
+            <select name="lang" onchange="changeLang(this)">
+                <option value="fr" selected>Français</option>
+                <option value="en" >English</option>
+            </select>
+        </form>
+    </div>
+
+    <script>
+        function changeLang(select) {
+            const lang = select.value;
+            // Redirection vers la page correspondante dans la langue choisie
+            const pathParts = window.location.pathname.split('/').filter(p => p);
+            // Remplace la première partie (la langue) par la nouvelle langue
+            if(pathParts.length > 0 && ['fr','en'].includes(pathParts[0])) {
+                pathParts[0] = lang;
+            } else {
+                pathParts.unshift(lang);
+            }
+            window.location.href = '/' + pathParts.join('/') + '/';
+        }
+    </script>
+</header>
+
+<div class="container main-content">
+    
+
+<div class="container main-content">
+
+    <!-- Article : Polarisation de Mueller -->
+    <div class="article" style="display: flex; align-items: flex-start;">
+        <img src="/website_deployment/static/Images/polarisation.png"
+             alt="Illustration polarisation Mueller"
+             style="vertical-align: top; margin-right: 20px;">
+        <div>
+            <h2>L'imagerie par polarisation de Mueller</h2>
+            <p>L'imagerie polarimétrique est un type d'imagerie utilisant la polarisation de la lumière comme source d'information. Elle se base sur les propriétés de réflexion et transmission des différents objets étudiés, qui modifient un état de polarisation initial.</p>
+            <p>Ce type d'imagerie permet ainsi d'obtenir des informations sur la structure microscopique des objets. Pour les polymères, cette information est particulièrement intéressante, car un même monomère peut donner des structures polymères différentes.</p>
+            <p>Elle permet également de séparer les réflexions multiples en profondeur d'un objet des réflexions en surface. On peut utiliser l'imagerie polarimétrique comme un 'filtre' afin de ne conserver que l'information souhaitée.</p>
+
+            <h3>La polarisation :</h3>
+            <p>Une onde lumineuse est une onde électromagnétique constituée d'un champ électrique (E) et d'un champ magnétique (B) oscillant perpendiculairement l'un à l'autre et à la direction de propagation.</p>
+
+            <div class="figure" style="text-align: center;">
+                <img src="/website_deployment/static/Images/onde-em.png"
+                     alt="Illustration onde électromagnétique"
+                     style="max-width: 30%; padding-top: 10px;">
+            </div>
+
+            <p>Dans la lumière naturelle, comme celle du Soleil, ces oscillations se produisent dans toutes les directions perpendiculaires à la direction de propagation : on parle de lumière 'non polarisée'. La lumière est dite 'polarisée' lorsqu'elle ne vibre que dans certaines directions spécifiques.</p>
+            <p>La polarisation peut être linéaire (vibrations dans une seule direction), circulaire (oscillations décrivant un cercle autour de l'axe de propagation), ou elliptique (oscillations suivant une ellipse).</p>
+
+            <h3>Formalisme de Stokes :</h3>
+            <p>Pour caractériser entièrement la polarisation de la lumière, on utilise généralement le formalisme de Stokes, représenté sous forme d'un vecteur :</p>
+
+            <p> $$ S = \begin{bmatrix} I \\ Q \\ U \\ V \end{bmatrix} ... $$ </p>
+
+            <p>On peut ainsi reconnaître : </p>
+            <ul>
+                <li>I comme l'intensité totale</li>
+                <li>Q comme le contraste entre la polarisation 0° et 90°</li>
+                <li>U comme le contraste entre la polarisation +45° et -45°</li>
+                <li>V comme le contraste entre les polarisations circulaires droite et gauche</li>
+            </ul>
+
+            <h3>Représentation dans la sphère de Poincaré :</h3>
+            <p>Ce vecteur est souvent ramené en trois dimensions en normalisant par I. La sphère de Poincaré permet de représenter graphiquement les états de polarisation.</p>
+            <div class="figure" style="text-align: center;">
+                <img src="/website_deployment/static/Images/Sphere_poincarre.png"
+                     alt="Sphère de Poincaré"
+                     style="max-width: 40%; padding-top: 10px;">
+            </div>
+
+            <h3>Matrice de Mueller :</h3>
+            <p>La matrice de Mueller M_objet définit la transformation d'un vecteur S_init en un vecteur S_sortie après interaction avec un objet ou élément optique.</p>
+            <p> $$ S_{sortie} = M_{objet}.S_{init} $$ </p>
+
+            <h3>Principe de mesure :</h3>
+            <p>La polarisation incidente est générée par un PSG (Polarization State Generator), l'objet est étudié, et l'état de sortie est analysé par un PSA (Polarization State Analyser).</p>
+            <div class="figure" style="text-align: center;">
+                <img src="/website_deployment/static/Images/montage_reflexion.PNG" alt="Montage en réflexion" style="max-width: 50%; padding-top: 10px;">
+            </div>
+
+            <h3>PSG et PSA :</h3>
+            <p>Le PSG permet d'obtenir toutes les polarisations souhaitées. Le PSA, constitué des mêmes éléments optiques mais dans l'ordre inverse, analyse l'état de sortie.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px; width: 70%; margin: auto;">
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="/website_deployment/static/Images/CL1.PNG" alt="CL1" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">Retardance du Cristal Liquide 1</figcaption>
+                </figure>
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="/website_deployment/static/Images/CL2.PNG" alt="CL2" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">Retardance du Cristal Liquide 2</figcaption>
+                </figure>
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="/website_deployment/static/Images/CL1p.PNG" alt="CL1'" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">Retardance du Cristal Liquide 1'</figcaption>
+                </figure>
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="/website_deployment/static/Images/CL2p.PNG" alt="CL2'" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">Retardance du Cristal Liquide 2'</figcaption>
+                </figure>
+            </div>
+
+            <h3>Manipulations :</h3>
+            <p>Les manipulations sont actuellement en cours.</p>
+            <h3>Résultats :</h3>
+            <p>À venir.</p>
+
+            <h3>Sources :</h3>
+            <li><a href="https://pastel.hal.science/pastel-00004815/file/BenHatitSami-phdthesis.pdf" target="_blank">[1] Sami Ben Hatit. Polarimétrie de Mueller résolue en angle. Physics [physics]. École Polytechnique X,2009.</a></li>
+
+        </div>
+    </div>
+</div>
+
+<a href="/fr/actualites/">Retour</a>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Labcom AIOLY. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

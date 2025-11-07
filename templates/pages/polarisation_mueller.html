@@ -1,228 +1,100 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Actualités - Labcom AIOLY{% endblock %}
+{% block title %}{% trans "Actualités - Labcom AIOLY" %}{% endblock %}
 
 {% block content %}
 
-
-<!-- Contenu principal -->
 <div class="container main-content">
-    <!-- Article 1 -->
+
+    <!-- Article : Polarisation de Mueller -->
     <div class="article" style="display: flex; align-items: flex-start;">
-        <img src="{% static 'Images\polarisation.png'%}" 
-             alt="Illustration Article 1" 
+        <img src="{% static 'Images/polarisation.png'%}"
+             alt="{% trans 'Illustration polarisation Mueller' %}"
              style="vertical-align: top; margin-right: 20px;">
         <div>
-            <h2>L'imagerie par polarisation de Mueller</h2>
-				<p> L'imagerie polarimétrique est un type d'imagerie utilisant la polarisation de la lumiere comme source d'information. Elle se base sur les proprietes de reflexion et transmissions des différents objets étudiés, qui viennent modifier un etat de polarisation initial.</p>
-				<p>Ce type d'imagerie permet ainsi d'obtenir des informations sur la structure microscopique des objets. Dans le cadre des polymères, cette information est dotant plus interessante qu'un même monomere peut donner des structures de polymères différentes.</p>
-				<p>Cet type d'imagerie permet également de séparer les reflexions multiples en profondeur d'un objet des reflexions en surface de ce meme objet. On peut ainsi utiliser l'imagerie polarimetrique comme "filtre" afin de ne conserver que l'information souhaitable.</p>
-			<h3>La polarisation :</h3>
-				<p>Une onde lumineuse est une onde électromagnétique constituée d'un champ électrique \( \vec{E} \) et d'un champ magnétique \( \vec{B} \) oscillant perpendiculairement l'un à l'autre et à la direction de propagation.</p>
-				<div class="figure" style="text-align: center;">
-					<img src="{% static 'Images/onde-em.png'%}"
-						 alt="Illustration Article 1" 
-						 style="max-width: 30%; padding-top: 10px;">
-				</div>
-				
-				<p> On note souvent le champ électrique comme : </p>
-				$$  \vec{E} (z,t) = Re( \vec{E_0} . e^{i.(\omega t - kz)} )$$
-				et où :
-				$$ \vec{E_0} = E_{0x}.e^{i\phi}\vec{u_x} + E_{0y}.e^{i(\phi + \delta)}.\vec{u_y}$$
-				
-				<p>Dans la lumière naturelle, comme celle du Soleil, ces oscillations se produisent dans toutes les directions perpendiculaires à la direction de propagation, on parle de lumiere "non polarisée". En revanche, la lumière est dite "polarisée" lorqu'elle ne vibre que dans une ou quelques directions spécifiques.</p>
-				<p>La polarisation peut être linéaire (vibrations dans une seule direction), circulaire (oscillations décrivant un cercle autour de l'axe de propagation), ou elliptique (oscillations suivant une ellipse).</p>
-				
-			<h3>Formalisme de Stokes :</h3>
-				<p> Afin de caracteriser entierement la polarisation d'une lumiere, on utilise généralement le formalisme de Stokes qui la caractérise sous forme d'un vecteur :</p>
-				<p> $$ S = \begin{bmatrix} I \\ Q \\ U \\ V \end{bmatrix} = \begin{bmatrix} \lvert E_x \lvert^2 + \lvert E_y \lvert^2 \\ \lvert E_x \lvert^2 - \lvert E_y \lvert^2 \\ 2.Re(E_x E_y ^*) \\ -2.Im(E_x E_y ^*) \end{bmatrix} = \begin{bmatrix} I_{0°}+I_{90°} \\ I_{0°}-I_{90°} \\ I_{+45°}-I_{-45°} \\ I_{CD}-I_{CG} \end{bmatrix}$$ </p>
-				<p>Où \( E_x = E_{0x}.e^{i\phi} \) et \( E_y = E_{0y}.e^{i(\phi + \delta)} \) correspondent aux composantes complexes du champ électrique orthogonales à sa propagation.</p>
-				<p> Il est a noter que S est réel.</p>
-				<p> On peut ainsi reconnaitre : </p>
-				<ul>
-					<li>I comme l'intensité totale</li>
-					<li>Q comme le contraste entre la polarisation 0° et celle 90°</li>
-					<li>U comme le contraste entre la polarisation +45° et celle -45°</li>
-					<li>V comme le contraste entre les polarisation circulaire droite et circulaire gauche</li>
-				</ul>
-			<h3>Représentation dans la sphère de Poincarré :</h3>
-				Souvent ce vecteur de quatre dimensions est ramené en trois dimensions en renormalisant par I :
+            <h2>{% trans "L'imagerie par polarisation de Mueller" %}</h2>
+            <p>{% trans "L'imagerie polarimétrique est un type d'imagerie utilisant la polarisation de la lumière comme source d'information. Elle se base sur les propriétés de réflexion et transmission des différents objets étudiés, qui modifient un état de polarisation initial." %}</p>
+            <p>{% trans "Ce type d'imagerie permet ainsi d'obtenir des informations sur la structure microscopique des objets. Pour les polymères, cette information est particulièrement intéressante, car un même monomère peut donner des structures polymères différentes." %}</p>
+            <p>{% trans "Elle permet également de séparer les réflexions multiples en profondeur d'un objet des réflexions en surface. On peut utiliser l'imagerie polarimétrique comme un 'filtre' afin de ne conserver que l'information souhaitée." %}</p>
 
-				<p>$$ \begin{bmatrix} S_1 \\ S_2 \\ S_3 \end{bmatrix}=  \begin{bmatrix} \frac{Q}{I} \\ \frac{U}{I} \\ \frac{V}{I} \end{bmatrix}$$</p>
-				
-				
-				Une représentation simple de ces vecteurs est la sphere de Poincaré :
-				
-				<div class="figure" style="text-align: center;">
-					<img src="{% static 'Images/Sphere_poincarre.png'%}" 
-						 alt="Illustration Article 1" 
-						 style="max-width: 40%; padding-top: 10px;">
-				</div>
-				<p>
-				Toute lumiere totalement polarisée trouvera se trouvera ainsi à la surface de cette sphère. Une lumière polarisée partiellement se trouvera à l'intérieur de la sphère et aura pour degré de polarisation (DoP) la distance à son centre.
-				</p>
-			<h3>Matrice de Mueller :</h3>
-				
-				<p>
-				La matrice de Mueller \( M_{objet} \) est definie comme a matrice de passage d'un vecteur \( S_{init} \) à un vecteur \( S_{sortie} \) apres une reflexion ou une transmissions avec un objet. Cet objet peut etre un échantilon ou un élement optique.
-				
-				<p> $$ S_{sortie} = M_{objet}.S_{init} $$ </p>
-				<p> $$ \begin{bmatrix} I_{sortie} \\ Q_{sortie} \\ U_{sortie} \\ V_{sortie} \end{bmatrix} = \begin{bmatrix} M_{11}& M_{12} &  M_{13} & M_{14}\\ M_{21}& M_{12} &  M_{23} & M_{24} \\ M_{31}& M_{32} &  M_{33} & M_{34} \\ M_{41}& M_{42} &  M_{43} & M_{44} \end{bmatrix} . \begin{bmatrix} I_{init} \\ Q_{init} \\ U_{init} \\ V_{init} \end{bmatrix} $$ </p>
-				
-				<p> Sans rentrer dans le detail des elements de cette matrice, elle permet de caractériser entierement la dépolarisation, repolarisation, l'anisotropie, la retardance d'un objet/ élément optique.</p>
-			
-			<h3>Principe de mesure :</h3>
-			
-				<p> La mesure de la polarisation s'articule autour de la mise en forme de la polarisation incidente avec un PSG (Polarization State Generator), une reflexion sur l'echantillon de matrice de Mueller \( M_{objet} \), et d'une analyse (ou projection) de l'etat de sortie par un PSA (Polarization State Analyser).
-				</p>
-				<div class="figure" style="text-align: center;">
-					<img src="{% static 'Images/montage_reflexion.PNG'%}"
-						 alt="Illustration Article 1"
-						 style="max-width: 50%; padding-top: 10px;">
-					 <!-- <figcaption style= "font-style: italic;"> Montage en reflexion </figcaption> -->
-				</div>
-				
-				<p> Cette méthode de mesure appelée polarimétrie en reflexion, est une méthode parmis plusieurs. D'autres méthodeds de mesure, comme celles en reflexion quasi normale, en transmission, en double reflexion, en double passage en transmission peuvent etre également utilisée.
-				</p>
-				
-			<h3>Méthode de mesure de la matrice de Mueller :</h3>
-				<p> La matrice de Mueller est généralement mesurée en observant la transformation d'une polarisation incidente en une polarisation de sortie. Une méthode de mesure consiste à utiliser une base simple de l'espace des polarisations et de la projeter en sortie. La base \( W \) la plus élémentaire est :</p>
-				<p> $$ W_{simple} =\begin{bmatrix}W_1 & W_2 & W_3 & W_ 4 \end{bmatrix} =\begin{bmatrix} \begin{bmatrix} 1 \\ 1 \\ 0 \\ 0 \end{bmatrix} & \begin{bmatrix} 1 \\ -1 \\ 0 \\ 0 \end{bmatrix} &\begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix} & \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix} \end{bmatrix} $$</p>
-				<p> On obtient ainsi chaque element de la matrice de Mueller de la maniere suivante :</p>
-				<p> $$ M = (W ^T)^{-1}.R.W^{-1} $$</p>
-				<p> où R est la matrice des mesures pour lequel chaque element \( R_{ij} \) correspond à la mesure pour lequel le PSG genere \( W_i \) et le PSA analyse \( W_j \).
-			
-				<p> Il est à noter que cette base n'est pas optimale du point de vue du conditionnement, mais elle présente l'avantage d'etre facilement interprétable. <p>
-				<p>
-				Une base plus optimale serait par exemple : 
-				</p>
-				$$ W_{opti} =\begin{bmatrix}W_1 & W_2 & W_3 & W_ 4 \end{bmatrix} =\begin{bmatrix} \begin{bmatrix} 1 \\ \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}} \end{bmatrix} & \begin{bmatrix} 1 \\ \frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{3}} \end{bmatrix} &\begin{bmatrix} 1 \\ -\frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{3}} \end{bmatrix} & \begin{bmatrix} 1 \\ -\frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}} \end{bmatrix} \end{bmatrix} $$</p>
-				
-				<p> Cette base n'est autre qu'un tetraèdre regulier au sein de la sphere de Poincaré. Cette base ainsi que toute rotation de cette base présente un conditionnement optimale\( [1] \).</p>
-			<h3>PSG et PSA :</h3>
-				Afin d'obtenir la polarisation incidente souhaitée, un PSG est utilisé :
-				
-				<div class="figure" style="text-align: center;">
-					<img src="{% static 'Images/PSG_PSA.PNG'%}"
-						 alt="Illustration Article 1"
-						 style="max-width: 50%; padding-top: 10px;">
-					 <figcaption style= "font-style: italic;"> Principe de fonctionnement d'un PSG et/ou PSA </figcaption>
-				</div>
-				
-			<p>Ce PSG permet d'obtenir toutes les polarisations de la matrice de la sphère de Poincaré en faisant varié l'angle \( \theta _{1/2} \) des Cristaux liquides (CL1 et CL2) et/ou leur retard \( \delta _{1/2} \) .	
-			La polarisation en sortie de ce PSG s'ecrit :</p>
+            <h3>{% trans "La polarisation :" %}</h3>
+            <p>{% trans "Une onde lumineuse est une onde électromagnétique constituée d'un champ électrique (E) et d'un champ magnétique (B) oscillant perpendiculairement l'un à l'autre et à la direction de propagation." %}</p>
 
-			<p> $$ S = \begin{bmatrix} 1\\
-					\left( c_2^2 + s_2^2 \cos \delta_2 \right) \left( c_1^2 + s_1^2 \cos \delta_1 \right) + c_1 c_2 s_1 s_2 (1 - \cos \delta_1)(1 - \cos \delta_2) - s_1 s_2 \sin \delta_1 \sin \delta_2 \\
-					c_2 s_2 (1 - \cos \delta_2) \left( c_1^2 + s_1^2 \cos \delta_1 \right) + c_1 s_1 (1 - \cos \delta_1) \left( s_2^2 + c_2^2 \cos \delta_2 \right) + s_1 c_2 \sin \delta_1 \sin \delta_2 \\
-					s_2 \sin \delta_2 \left( c_1^2 + s_1^2 \cos \delta_1 \right) - c_2 \sin \delta_2 c_1 s_1 (1 - \cos \delta_1) + s_1 \sin \delta_1 \cos \delta_2
-					\end{bmatrix} $$</p>
-			
-			<br>
-			<p style="text-indent: 30px;"> où \( c_i =  \cos 2.\theta _i \), \( s_i = \sin 2.\theta _i \), \( \delta _i \) le déphasage introduit par \( CL_i \).</p>
-			<br>
-			<p> Dans le cas de \( W_{simple} \), on obtient les paramètres du PSG suivants : </p>
+            <div class="figure" style="text-align: center;">
+                <img src="{% static 'Images/onde-em.png'%}"
+                     alt="{% trans 'Illustration onde électromagnétique' %}"
+                     style="max-width: 30%; padding-top: 10px;">
+            </div>
 
-			<table>
-				<thead>
-					<tr>
-						<th>Expression</th>
-						<th>\( \theta_1 \)</th>
-						<th>\( \delta_1 \)</th>
-						<th>\( \theta_2 \)</th>
-						<th>\( \delta_2 \)</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>\( W_{1}^{simple} \)</td>
-						<td>\( \frac{\pi}{4} \)</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-					</tr>
-					<tr>
-						<td>\( W_2^{simple} \)</td>
-						<td>\( \frac{\pi}{4} \)</td>
-						<td>\( \pi \)</td>
-						<td>0</td>
-						<td>0</td>
-					</tr>
-					<tr>
-						<td>\( W_3^{simple} \)</td>
-						<td>\( \frac{\pi}{4} \)</td>
-						<td>\( \frac{\pi}{2} \)</td>
-						<td>0</td>
-						<td>\( \frac{\pi}{2} \)</td>
-					</tr>
-					<tr>
-						<td>\( W_4^{simple} \)</td>
-						<td>\( \frac{\pi}{4} \)</td>
-						<td>\( \frac{\pi}{2} \)</td>
-						<td>0</td>
-						<td>0</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<p>Cette configuration n'est pas unique mais présente l'avantage de ne pas modifier les angles \( \theta_1 \) et \( \theta_2 \) entre chaque mesure. Il est donc possible de sequencer les polarisations incidentes uniquement avec le retard des cristaux liquides.</p>
-			<br>
-			<p> L’analyseur d’états de polarisation (PSA) est constitué des mêmes éléments optiques que le PSG mais dans l’ordre inverse, le détecteur remplaçant la source en fin de parcours : </p>
-			<p> $$ \theta ' _i =  \theta _i \ ,\  \delta ' _i = -\delta _i $$ </p>
-			
-			<p> Des séquences appliquées aux cristaux liquides permettent ainsi d'obtenir les polarisations souhaitées en entrée par le PSG et les projections souhaitées par le PSA :</p>
-			
-			<!-- Grille contenant l'image -->
-			<div style="
-				display: grid; 
-				grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
-				grid-template-rows: auto auto; /* Deux lignes automatiques selon le contenu */
-				grid-gap: 10px; 
-				width: 70%; 
-				margin: auto;">
-				
-				<!-- Première case -->
-				<figure style="border: 1px solid #ddd; margin: 0; text-align: center;">
-					<img src="{% static 'Images/CL1.PNG'%}" alt="Graphique CL1" style="display: block; max-width: 100%; height: auto; margin: auto;">
-					<figcaption style="margin-top: 10px; font-style: italic; color: #555;">Retardance du Cristal Liquide 1</figcaption>
-				</figure>
+            <p>{% trans "Dans la lumière naturelle, comme celle du Soleil, ces oscillations se produisent dans toutes les directions perpendiculaires à la direction de propagation : on parle de lumière 'non polarisée'. La lumière est dite 'polarisée' lorsqu'elle ne vibre que dans certaines directions spécifiques." %}</p>
+            <p>{% trans "La polarisation peut être linéaire (vibrations dans une seule direction), circulaire (oscillations décrivant un cercle autour de l'axe de propagation), ou elliptique (oscillations suivant une ellipse)." %}</p>
 
-				<!-- Deuxième case -->
-				<figure style="border: 1px solid #ddd; margin: 0; text-align: center;">
-					<img src="{% static 'Images/CL2.PNG'%}" alt="Graphique CL1" style="display: block; max-width: 100%; height: auto; margin: auto;">
-					<figcaption style="margin-top: 10px; font-style: italic; color: #555;">Retardance du Cristal Liquide 2</figcaption>
-				</figure>
+            <h3>{% trans "Formalisme de Stokes :" %}</h3>
+            <p>{% trans "Pour caractériser entièrement la polarisation de la lumière, on utilise généralement le formalisme de Stokes, représenté sous forme d'un vecteur :" %}</p>
 
-				<!-- Troisième case -->
-				<figure style="border: 1px solid #ddd; margin: 0; text-align: center;">
-					<img src="{% static 'Images/CL1p.PNG'%}" alt="Graphique CL1" style="display: block; max-width: 100%; height: auto; margin: auto;">
-					<figcaption style="margin-top: 10px; font-style: italic; color: #555;">Retardance du Cristal Liquide 1'</figcaption>
-				</figure>
+            <p> $$ S = \begin{bmatrix} I \\ Q \\ U \\ V \end{bmatrix} ... $$ </p>
 
-				<!-- Quatrième case -->
-				<figure style="border: 1px solid #ddd; margin: 0; text-align: center;">
-					<img src="{% static 'Images/CL2p.PNG'%}" alt="Graphique CL1" style="display: block; max-width: 100%; height: auto; margin: auto;">
-					<figcaption style="margin-top: 10px; font-style: italic; color: #555;">Retardance du Cristal Liquide 2'</figcaption>
-				</figure>
-			</div>
-			
-			
-			
-			<h3>Manipulations : </h3>
-				Les manipulations sont actuellement en cours.
-			<h3>Résultats : </h3>
-				A venir
+            <p>{% trans "On peut ainsi reconnaître : " %}</p>
+            <ul>
+                <li>{% trans "I comme l'intensité totale" %}</li>
+                <li>{% trans "Q comme le contraste entre la polarisation 0° et 90°" %}</li>
+                <li>{% trans "U comme le contraste entre la polarisation +45° et -45°" %}</li>
+                <li>{% trans "V comme le contraste entre les polarisations circulaires droite et gauche" %}</li>
+            </ul>
 
-			<h3>Sources :</h3>
-			<li><a href="https://pastel.hal.science/pastel-00004815/file/BenHatitSami-phdthesis.pdf" target="_blank">[1] Sami Ben Hatit. Polarimétrie de Mueller résolue en angle. Physics [physics]. Ecole Polytechnique X,2009. English. ffNNT : ff. ffpastel-00004815f</a></li>
+            <h3>{% trans "Représentation dans la sphère de Poincaré :" %}</h3>
+            <p>{% trans "Ce vecteur est souvent ramené en trois dimensions en normalisant par I. La sphère de Poincaré permet de représenter graphiquement les états de polarisation." %}</p>
+            <div class="figure" style="text-align: center;">
+                <img src="{% static 'Images/Sphere_poincarre.png'%}"
+                     alt="{% trans 'Sphère de Poincaré' %}"
+                     style="max-width: 40%; padding-top: 10px;">
+            </div>
 
-			
-			
-		</div>
+            <h3>{% trans "Matrice de Mueller :" %}</h3>
+            <p>{% trans "La matrice de Mueller M_objet définit la transformation d'un vecteur S_init en un vecteur S_sortie après interaction avec un objet ou élément optique." %}</p>
+            <p> $$ S_{sortie} = M_{objet}.S_{init} $$ </p>
+
+            <h3>{% trans "Principe de mesure :" %}</h3>
+            <p>{% trans "La polarisation incidente est générée par un PSG (Polarization State Generator), l'objet est étudié, et l'état de sortie est analysé par un PSA (Polarization State Analyser)." %}</p>
+            <div class="figure" style="text-align: center;">
+                <img src="{% static 'Images/montage_reflexion.PNG'%}" alt="{% trans 'Montage en réflexion' %}" style="max-width: 50%; padding-top: 10px;">
+            </div>
+
+            <h3>{% trans "PSG et PSA :" %}</h3>
+            <p>{% trans "Le PSG permet d'obtenir toutes les polarisations souhaitées. Le PSA, constitué des mêmes éléments optiques mais dans l'ordre inverse, analyse l'état de sortie." %}</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px; width: 70%; margin: auto;">
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="{% static 'Images/CL1.PNG'%}" alt="CL1" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">{% trans "Retardance du Cristal Liquide 1" %}</figcaption>
+                </figure>
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="{% static 'Images/CL2.PNG'%}" alt="CL2" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">{% trans "Retardance du Cristal Liquide 2" %}</figcaption>
+                </figure>
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="{% static 'Images/CL1p.PNG'%}" alt="CL1'" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">{% trans "Retardance du Cristal Liquide 1'" %}</figcaption>
+                </figure>
+                <figure style="border: 1px solid #ddd; text-align: center;">
+                    <img src="{% static 'Images/CL2p.PNG'%}" alt="CL2'" style="max-width: 100%; height: auto;">
+                    <figcaption style="font-style: italic; color: #555;">{% trans "Retardance du Cristal Liquide 2'" %}</figcaption>
+                </figure>
+            </div>
+
+            <h3>{% trans "Manipulations :" %}</h3>
+            <p>{% trans "Les manipulations sont actuellement en cours." %}</p>
+            <h3>{% trans "Résultats :" %}</h3>
+            <p>{% trans "À venir." %}</p>
+
+            <h3>{% trans "Sources :" %}</h3>
+            <li><a href="https://pastel.hal.science/pastel-00004815/file/BenHatitSami-phdthesis.pdf" target="_blank">{% trans "[1] Sami Ben Hatit. Polarimétrie de Mueller résolue en angle. Physics [physics]. École Polytechnique X,2009." %}</a></li>
+
+        </div>
     </div>
 </div>
 
-<a href="/website_deployment{% url 'actualites' %}">Retour</a>
+<a href="/{{ LANGUAGE_CODE }}/actualites/">{% trans "Retour" %}</a>
 
 {% endblock %}

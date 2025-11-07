@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -64,23 +65,6 @@
         .logo_inrae img {
             height: 40px;
             margin-right: 80px;
-        }
-
-        .lang-switcher {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
-
-        .lang-switcher a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .lang-switcher a:hover {
-            color: #ADD8E6;
         }
 
         .main-content {
@@ -176,6 +160,29 @@
 			margin-right: 15px;
 			border-radius: 5px;
 		}
+
+        /* Sélecteur de langue */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .lang-switcher select {
+            background-color: #002F5C;
+            color: white;
+            border: none;
+            font-size: 14px;
+            padding: 6px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .lang-switcher select:hover {
+            background-color: #004080;
+        }
+
+
         @media (max-width: 768px) {
 			.chercheurs-groupes {
 				flex-direction: column; /* Passe à une colonne sur les petits écrans */
@@ -186,11 +193,11 @@
                 flex-direction: column;
                 align-items: center;
             }
-        
+
             nav ul {
                 flex-direction: column;
             }
-        
+
             nav ul li {
                 margin: 10px 0;
             }
@@ -231,14 +238,26 @@
 </head>
 <body>
 
+
+
 <header>
     <nav>
         <ul>
-            <li><a href= "/website_deployment/" class="{% if active_page == 'home' %}active{% endif %}">Accueil</a></li>
-            <li><a href="/website_deployment/actualites/" class="{% if active_page == 'actualites' %}active{% endif %}">Actualités</a></li>
-            <li><a href="/website_deployment/chercheurs/" class="{% if active_page == 'chercheurs' %}active{% endif %}">Chercheurs</a></li>
-            <li><a href="/website_deployment/partenaires/" class="{% if active_page == 'partenaires' %}active{% endif %}">Partenaires</a></li>
-            <li><a href="/website_deployment/contact/" class="{% if active_page == 'contact' %}active{% endif %}">Nous contacter</a></li>
+            <li>
+                <a href="/{{ LANGUAGE_CODE }}/" class="{% if active_page == 'home' %}active{% endif %}">{% trans "Accueil" %}</a>
+            </li>
+            <li>
+                <a href="/{{ LANGUAGE_CODE }}/actualites/" class="{% if active_page == 'actualites' %}active{% endif %}">{% trans "Actualités" %}</a>
+            </li>
+            <li>
+                <a href="/{{ LANGUAGE_CODE }}/chercheurs/" class="{% if active_page == 'chercheurs' %}active{% endif %}">{% trans "Chercheurs" %}</a>
+            </li>
+            <li>
+                <a href="/{{ LANGUAGE_CODE }}/partenaires/" class="{% if active_page == 'partenaires' %}active{% endif %}">{% trans "Partenaires" %}</a>
+            </li>
+            <li>
+                <a href="/{{ LANGUAGE_CODE }}/contact/" class="{% if active_page == 'contact' %}active{% endif %}">{% trans "Nous contacter" %}</a>
+            </li>
         </ul>
     </nav>
 
@@ -258,11 +277,30 @@
         </div>
     </div>
 
-    <div class="lang-search">
-        <div class="lang-switcher">
-            <a href="{% url 'home' %}">FR</a> |
-        </div>
+    <!-- 🌍 Sélecteur de langue simple -->
+    <div class="lang-switcher">
+        <form method="get" id="lang-form">
+            <select name="lang" onchange="changeLang(this)">
+                <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>Français</option>
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+            </select>
+        </form>
     </div>
+
+    <script>
+        function changeLang(select) {
+            const lang = select.value;
+            // Redirection vers la page correspondante dans la langue choisie
+            const pathParts = window.location.pathname.split('/').filter(p => p);
+            // Remplace la première partie (la langue) par la nouvelle langue
+            if(pathParts.length > 0 && ['fr','en'].includes(pathParts[0])) {
+                pathParts[0] = lang;
+            } else {
+                pathParts.unshift(lang);
+            }
+            window.location.href = '/' + pathParts.join('/') + '/';
+        }
+    </script>
 </header>
 
 <div class="container main-content">

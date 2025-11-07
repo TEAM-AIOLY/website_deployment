@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Actualités - Labcom AIOLY{% endblock %}
+{% block title %}{% trans "Apprentissage auto-supervisé - Labcom AIOLY" %}{% endblock %}
 
 {% block content %}
-
 
 <!-- Contenu principal -->
 <div class="container main-content">
@@ -12,90 +12,126 @@
     <!-- Article 1 -->
     <div class="article" style="display: flex; align-items: flex-start;">
         <img src="{% static 'Images/selfsupdino.png' %}"
-             alt="Illustration Article 1"
+             alt="{% trans 'Illustration Article 1' %}"
              style="vertical-align: top; margin-right: 20px;">
         <div>
-            <h2>L'apprentissage auto-supervisé</h2>
+            <h2>{% trans "L'apprentissage auto-supervisé" %}</h2>
             <p>
-                L'apprentissage auto-supervisé est une méthode d'apprentissage profond qui tire parti de larges bases de données non-annotées.
-                Les modèles entraînés en auto-supervision présentent les meilleurs performances dans le traitement du langage, notamment avec les chatbots et d'excellentes performance en vision par ordinateur. <br>
+                {% blocktrans %}
+                L'apprentissage auto-supervisé est une méthode d'apprentissage profond qui tire parti de larges bases de données non annotées.
+                Les modèles entraînés en auto-supervision présentent les meilleures performances dans le traitement du langage, notamment avec les chatbots, et d'excellentes performances en vision par ordinateur.
+                {% endblocktrans %}
             </p>
-            <h3>Apprentissage auto-supervisé pour le texte et l'image</h3>
+
+            <h3>{% trans "Apprentissage auto-supervisé pour le texte et l'image" %}</h3>
             <p>
-                Pour entrainer un modèle à faire une tâche souhaitée, la méthode classique d'apprentissage consiste à minimiser l'erreur entre la prédiction du modèle et la prédiction faite par un annotateur humain.
-                Obtenir une annotation est souvent long, pénible et extrêmement onéreux, c'est la principale raison pour laquelle les modèles auto-supervisés sont si intéressants. <br>
+                {% blocktrans %}
+                Pour entraîner un modèle à faire une tâche souhaitée, la méthode classique d'apprentissage consiste à minimiser l'erreur entre la prédiction du modèle et celle d'un annotateur humain.
+                Obtenir une annotation est souvent long, pénible et extrêmement onéreux — c'est la principale raison pour laquelle les modèles auto-supervisés sont si intéressants.
+                {% endblocktrans %}
             </p>
             <p>
-                On peut voir un modèle neuronal profond comme la succession d'un encodeur et d'un décodeur. L'encodeur permet d'obtenir des représentations de nos données et le décodeur permet d'effectuer la tâche souhaitée.
-                La figure 1 illustre cela avec le modèle AlexNet, une première succession de convolutions permettent d'obtenir une représentation de l'image, puis, quelques couches denses permettent de décoder cette information afin de décider à quelle classe appartient l'image.
+                {% blocktrans %}
+                On peut voir un modèle neuronal profond comme la succession d'un encodeur et d'un décodeur.
+                L'encodeur permet d'obtenir des représentations des données et le décodeur effectue la tâche souhaitée.
+                La figure 1 illustre cela avec le modèle AlexNet : une succession de convolutions permet d'obtenir une représentation de l'image, puis quelques couches denses décodent cette information afin de déterminer la classe correspondante.
+                {% endblocktrans %}
             </p>
+
             <div class="figure">
                 <img src="{% static 'Images/enc_dec.png' %}"
-                alt="Illustration Article 1"
-                style="max-width: 50%; margin-right: 30%; padding-top: 10px;">
+                     alt="{% trans 'Illustration de l’encodeur-décodeur' %}"
+                     style="max-width: 50%; margin-right: 30%; padding-top: 10px;">
             </div>
+
             <p>
-                Pour utiliser un modèle entraîné en auto-supervision afin de réaliser une tâche souhaitée, on transfert l'encodeur du modèle et on y ajoute un décodeur adapté à notre tâche.
-                Transférer l'encodeur consiste à reprendre son architecture et ses poids, c'est un simple "copié-collé".
-                L'ensemble encodeur et décodeur est alors entraîné à réaliser la tâche souhaitée. Ce fonctionnement est illustré en figure 2.
-                L'idée est que l'encodeur entrainé en auto-supervision est capable de fournir de bonnes représentations des données, et donc, qu'il est bien meilleur qu'un encodeur ayant été initialisé avec des poids aléatoirs.
+                {% blocktrans %}
+                Pour utiliser un modèle entraîné en auto-supervision afin de réaliser une tâche donnée, on transfère l'encodeur du modèle et on y ajoute un décodeur adapté.
+                Transférer l'encodeur consiste à reprendre son architecture et ses poids — c'est un simple copié-collé.
+                L'ensemble encodeur + décodeur est ensuite entraîné à accomplir la tâche souhaitée, comme illustré en figure 2.
+                L'idée est qu'un encodeur entraîné en auto-supervision produit de meilleures représentations des données qu'un encodeur initialisé aléatoirement.
+                {% endblocktrans %}
             </p>
+
             <div class="figure">
                 <img src="{% static 'Images/auto_sup_entr.png' %}"
-                alt="Illustration Article 1"
-                style="max-width: 55%; margin-right: 30%; padding-top: 10px;">
+                     alt="{% trans 'Illustration du transfert d’encodeur' %}"
+                     style="max-width: 55%; margin-right: 30%; padding-top: 10px;">
             </div>
+
             <p>
+                {% blocktrans %}
                 Afin d'apprendre à fournir de bonnes représentations, les modèles entraînés en auto-supervision apprennent sur une <i>tâche prétexte</i>.
                 Cette tâche prétexte est fondée sur l'observation des données et ne requiert aucune annotation manuelle.
-                Il existe 3 grandes familles de tâches prétextes :
-                <ul>
-                    <li>
-                        <b>Les tâches de reconstruction.</b> À partir d'une donnée dont on a masqué automatiquement une partie de l'information, le modèle doit reconstruire la donnée complète.
-                        Pour une modalité telle que les images, ce masquage peut consister à désactiver aléatoirement un groupe de pixels, pour le texte cela peut être de masquer des mots de la phrase.
-                    </li>
-                    <li>
-                        <b>Les tâches contrastives.</b> Le modèle est entraîné à obtenir des représentations proches pour des images similaires (paires positives) et des représentations éloignées pour des images différentes (paires négatives).
-                        Les paires positives sont obtenues en appliquant des transformations aussi appelées augmentations de données à une même image. Par exemple, une augmentation commune pour les images consiste à obtenir deux sous-images en recadrant l'image d'origine, ces sous-images forment une paire positive.
-                    </li>
-                    <li>
-                        <b>Les tâches d'invariance.</b> Ici, le modèle est seulement entraîné à obtenir des représentations proches pour des images similaires. Une solution triviale à ce problème consisterait à dire que toutes les images sont les mêmes, c'est ce qu'on appèle <i>l'effondremment</i>.
-                        Un modèle s'étant éffondré n'est d'aucune utilité puisqu'il fournit la même représentation pour chaque image.
-                        Pour éviter le phénomène d'effondremment, différentes contraintes de régularisation sont appliquées durant l'entraînement.
-                    </li>
-                </ul>
+                Il existe trois grandes familles de tâches prétextes :
+                {% endblocktrans %}
             </p>
-            <h3>L'apprentissage auto-supervisé appliqué aux données spectrales</h3>
-            <p>
-                Si l'apprentissage auto-supervisé est très populaire pour les images et le texte, il est quasi inexistant pour les données spectrales.
-                C'est pourquoi PellencST et l'équipe COMIC ont lancé une thèse intitulée "Apprentissage auto-supervisé appliqué aux données spectrales pour le tri des déchets.".
-                Cette thèse est réalisée par Ivy Tumoine, co-dirigée par Ryad Bendoula et Jean-Michel Roger et co-encadrée par Maxime Metz et Florent Abdelgafour. <br>
-                L'adaptation de ces approches auto-supervisées nécessite de lever trois verrous méthodologiques majeurs:
-                <ul>
-                    <li>
-                        <b>Augmentation de données spectrales.</b> Premièrement, les approches auto-supervisées cherchent majoritairement à rendre les modèles invariants à des perturbations à l'aide d'augmentations de données.
-                        Cependant, peu de développements ont été réalisés autour de l'augmentation de données spectrales pour l'entrainement de réseaux de neurones.
-                        Comme ces augmentations déterminent la connaissance que va acquérir le modèle, il est primordial de les concevoir en prenant en compte la nature des données spectrales : composition, dépendances lointaines, conditions de mesure…
-                    </li>
-                    <li>
-                        <b>Réseaux neuronaux adaptés aux données spectrales</b>Deuxièmement, les approches proposées nécessiteront potentiellement des réseaux de neurones plus adaptés au traitement de données spectrales.
-                        Un grand nombre d'architectures sont disponibles pour du traitement de vidéos et d'images, cependant pour le traitement de données spectrales peu d'architectures sont disponibles.
-                        De plus, les réseaux de neurones comme les ResNet ne prennent pas en compte l'information contextuelle.
-                        En effet, il existe des corrélations lointaines entre les différentes longueurs d'ondes qui ne pourront pas toujours être considérées par des architectures de type ResNet.
-                        De nouvelles architectures comme les Transformers (SWIN, ViT, etc) devront donc être explorées.
-                    </li>
-                    <li>
-                        <b>Stratégies d'auto-supervision adaptées aux données spectrales</b>Troisièmement, les stratégies d'auto-supervision mises en œuvre dans les autres domaines, tels que la vision, ne prennent pas en compte la structure des données spectrales.
-                        Par exemple, le masquage va uniquement corrompre localement et spatialement les données d'entrée, cependant, certaines signatures spectrales ne répondent qu'à une gamme de longueurs d'ondes.
-                        Un des objectifs de la thèse sera donc de proposer une ou plusieurs stratégies d'auto-supervision adaptées aux données spectrales, par exemple en masquant une partie des structures latentes dans les données.
-                    </li>
-                </ul>
 
+            <ul>
+                <li>
+                    {% blocktrans %}
+                    <b>Les tâches de reconstruction.</b> À partir d'une donnée dont on a masqué automatiquement une partie de l'information, le modèle doit reconstruire la donnée complète.
+                    Pour les images, cela peut consister à masquer aléatoirement un groupe de pixels ; pour le texte, à cacher certains mots.
+                    {% endblocktrans %}
+                </li>
+                <li>
+                    {% blocktrans %}
+                    <b>Les tâches contrastives.</b> Le modèle est entraîné à obtenir des représentations proches pour des images similaires (paires positives) et éloignées pour des images différentes (paires négatives).
+                    Les paires positives sont obtenues en appliquant des transformations (ou augmentations de données) à une même image.
+                    {% endblocktrans %}
+                </li>
+                <li>
+                    {% blocktrans %}
+                    <b>Les tâches d'invariance.</b> Le modèle apprend à obtenir des représentations proches pour des images similaires.
+                    Une solution triviale serait de considérer toutes les images comme identiques — un phénomène appelé <i>effondrement</i>.
+                    Pour éviter cela, des contraintes de régularisation sont appliquées durant l'entraînement.
+                    {% endblocktrans %}
+                </li>
+            </ul>
+
+            <h3>{% trans "L'apprentissage auto-supervisé appliqué aux données spectrales" %}</h3>
+            <p>
+                {% blocktrans %}
+                Si l'apprentissage auto-supervisé est très populaire pour les images et le texte, il est encore quasi inexistant pour les données spectrales.
+                C'est pourquoi PellencST et l'équipe COMIC ont lancé une thèse intitulée « Apprentissage auto-supervisé appliqué aux données spectrales pour le tri des déchets ».
+                Cette thèse, réalisée par Ivy Tumoine, est co-dirigée par Ryad Bendoula et Jean-Michel Roger, et co-encadrée par Maxime Metz et Florent Abdelghafour.
+                {% endblocktrans %}
             </p>
+
+            <p>
+                {% blocktrans %}
+                L'adaptation de ces approches auto-supervisées nécessite de lever trois verrous méthodologiques majeurs :
+                {% endblocktrans %}
+            </p>
+
+            <ul>
+                <li>
+                    {% blocktrans %}
+                    <b>Augmentation de données spectrales.</b> Les approches auto-supervisées cherchent à rendre les modèles invariants à certaines perturbations via des augmentations de données.
+                    Cependant, peu de recherches concernent les augmentations adaptées aux spectres.
+                    Comme ces transformations influencent directement les connaissances apprises, elles doivent être conçues en tenant compte de la nature des données spectrales : composition, dépendances lointaines, conditions de mesure, etc.
+                    {% endblocktrans %}
+                </li>
+                <li>
+                    {% blocktrans %}
+                    <b>Réseaux neuronaux adaptés aux données spectrales.</b> Ces approches nécessiteront sans doute des architectures mieux adaptées aux spectres.
+                    Si de nombreux réseaux existent pour les images et les vidéos, peu sont optimisés pour les données spectrales.
+                    Les ResNet, par exemple, ne prennent pas toujours en compte les corrélations lointaines entre longueurs d’onde.
+                    De nouvelles architectures comme les Transformers (SWIN, ViT, etc.) devront être explorées.
+                    {% endblocktrans %}
+                </li>
+                <li>
+                    {% blocktrans %}
+                    <b>Stratégies d'auto-supervision adaptées aux données spectrales.</b> Les stratégies utilisées dans d'autres domaines ne tiennent pas compte de la structure spectrale.
+                    Par exemple, le masquage spatial classique n'est pas adapté car certaines signatures spectrales ne dépendent que d'une gamme de longueurs d'onde.
+                    L'objectif sera donc de concevoir de nouvelles stratégies d'auto-supervision adaptées, par exemple en masquant une partie des structures latentes.
+                    {% endblocktrans %}
+                </li>
+            </ul>
         </div>
     </div>
 </div>
-<a href="/website_deployment{% url 'actualites' %}">Retour</a>
-    
-    
+
+<a href="/{{ LANGUAGE_CODE }}/actualites/">{% trans "Retour" %}</a>
+
 {% endblock %}

@@ -1,0 +1,872 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-07 16:00+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: django_web_aioly/views.py:29
+msgid "Directeur Laboratoire COMIC"
+msgstr "COMIC Laboratory Director"
+
+#: django_web_aioly/views.py:30 django_web_aioly/views.py:43
+msgid "Optique, Chimiométrie"
+msgstr "Optics, Chemometrics"
+
+#: django_web_aioly/views.py:33
+msgid ""
+"Après un doctorat consacré au développement de biocapteurs optiques pour le "
+"secteur biomédical, Ryad a passé 2 ans à l'Institut Femto-St pour le "
+"développement d'oscillateurs micro-ondes optoélectroniques. Depuis 2007, il "
+"est chercheur à l'INRAE (Institut national de recherche pour l'agriculture, "
+"l'alimentation et l'environnement). Ryad dirige le groupe \"Capteurs "
+"optiques pour milieux complexes\". Ses activités de recherche se concentrent"
+" sur la spectrométrie Vis-NIR appliquée à la conception de capteurs pour "
+"l’agriculture et l’environnement. Il développe des méthodes et dispositifs "
+"optiques spécifiques afin d'améliorer la qualité du signal et la précision "
+"des mesures spectrométriques. Il participe également à la conception de "
+"nouveaux dispositifs spectroscopiques."
+msgstr ""
+"After a doctorate devoted to the development of optical biosensors for the "
+"biomedical sector, Ryad spent 2 years at the Femto-St Institute for the "
+"development of optoelectronic microwave oscillators.Since 2007, he has been "
+"a researcher at INRAE ​​(National Research Institute for Agriculture, Food "
+"and the Environment).Ryad leads the “Optical sensors for complex "
+"environments” group.Its research activities focus on Vis-NIR spectrometry "
+"applied to the design of sensors for agriculture and the environment.It "
+"develops specific optical methods and devices to improve signal quality and "
+"the precision of spectrometric measurements.He also participates in the "
+"design of new spectroscopic devices."
+
+#: django_web_aioly/views.py:42
+msgid "Chargée de recherche optique"
+msgstr "Optical research officer"
+
+#: django_web_aioly/views.py:55
+msgid "Ingénieur du génie rural pour l'environnement et l'agriculture"
+msgstr "Rural engineering engineer for environment and agriculture"
+
+#: django_web_aioly/views.py:56
+msgid "Chimiométrie, Spectroscopie"
+msgstr "Chemometrics, Spectroscopy"
+
+#: django_web_aioly/views.py:59
+msgid ""
+"Jean-Michel ROGER a obtenu son diplôme d'ingénieur du génie rural en 1990 et"
+" son doctorat en 1995. Depuis les années 90, il mène des recherches en "
+"spectrométrie proche infrarouge et en chimiométrie. Son souci constant est "
+"de produire des solutions simples et opérationnelles pour mettre en œuvre la"
+" NIRS pour l'environnement et à l'agriculture. Pour rendre les capteurs "
+"embarqués opérationnels, il a d'abord étudié les problèmes de robustesse de "
+"l'étalonnage. Il a ainsi promu les méthodes d'orthogonalisation, qui sont "
+"maintenant utilisées dans des applications pratiques, comme le transfert "
+"d'étalonnage ou la correction de l'effet d'humidité. Il a également étudié "
+"les techniques de sélection de variables, dédiées au cas spécifique de la "
+"NIRS, ce qui lui a permis de développer des capteurs NIR pour l'agriculture."
+" En 2016, il a reçu le prix Tomas Hirschfeld du Comité international de la "
+"spectroscopie NIR et le prix de la recherche appliquée de la FIECC. En 2018,"
+" il a créé le pôle de recherche en chimiométrie ChemHouse, qui promeut "
+"l'éducation, la recherche et la coopération autour de la NIRS et de la "
+"chimiométrie (http://chemproject.org)."
+msgstr ""
+"Jean-Michel ROGER obtained his rural engineering degree in 1990 and his "
+"doctorate in 1995. Since the 1990s, he has conducted research in near-"
+"infrared spectrometry and chemometrics.Its constant concern is to produce "
+"simple and operational solutions to implement NIRS for the environment and "
+"agriculture.To make the onboard sensors operational, he first studied "
+"calibration robustness issues.He thus promoted orthogonalization methods, "
+"which are now used in practical applications, such as calibration transfer "
+"or humidity effect correction.He also studied variable selection techniques,"
+" dedicated to the specific case of NIRS, which allowed him to develop NIR "
+"sensors for agriculture.In 2016, he received the Tomas Hirschfeld Prize from"
+" the International Committee for NIR Spectroscopy and the FIECC Applied "
+"Research Prize.In 2018, he established the ChemHouse chemometrics research "
+"hub, which promotes education, research and cooperation around NIRS and "
+"chemometrics (http://chemproject.org)."
+
+#: django_web_aioly/views.py:69
+msgid "Chimiométrie, Intelligence Artificielle"
+msgstr "Chemometrics, Artificial Intelligence"
+
+#: django_web_aioly/views.py:81
+msgid "Directeur R&D"
+msgstr "R&D Director"
+
+#: django_web_aioly/views.py:82
+msgid "Matériaux et optique"
+msgstr "Materials and optics"
+
+#: django_web_aioly/views.py:85
+msgid ""
+"Ingénieur Polytech Paris Sud, spécialisé en sciences et génie des matériaux,"
+" et docteur en optique appliquée aux couches minces (2010). Il a 15 ans "
+"d'expérience dans le milieu des semi-conducteurs, et a rejoint Pellenc ST en"
+" 2022. Il a amélioré l'efficacité énergétique des machines en proposant des "
+"nouvelles architectures pneumatiques. Il a également proposé un nouveau "
+"système de gestion des perturbations aérauliques permettant d'améliorer "
+"significativement l'efficacité de tri des films et papiers. Il conduit "
+"actuellement plusieurs développements autour de technologies clefs de "
+"détection pour l'entreprise, notamment des systèmes de spectroscopie proche "
+"et moyen infrarouge. Il défini, oriente et encadre les travaux de R&D de "
+"l'équipe composée de 11 ingénieurs, dont 1 docteur et 3 doctorants dans les "
+"domaines de l'intelligence artificielle, de la vision par ordinateur et des "
+"technologies de détection."
+msgstr ""
+"Polytech Paris Sud engineer, specialized in materials science and "
+"engineering, and doctor in optics applied to thin layers (2010).He has 15 "
+"years of experience in the semiconductor sector, and joined Pellenc ST in "
+"2022. He improved the energy efficiency of machines by proposing new "
+"pneumatic architectures.He also proposed a new airflow disturbance "
+"management system to significantly improve the efficiency of sorting films "
+"and papers.He is currently leading several developments around key detection"
+" technologies for the company, notably near and mid-infrared spectroscopy "
+"systems.He defines, guides and supervises the R&D work of the team made up "
+"of 11 engineers, including 1 doctor and 3 doctoral students in the fields of"
+" artificial intelligence, computer vision and detection technologies."
+
+#: django_web_aioly/views.py:94
+msgid "Ingénieur intelligence artificielle"
+msgstr "Artificial intelligence engineer"
+
+#: django_web_aioly/views.py:95 django_web_aioly/views.py:147
+#: django_web_aioly/views.py:160
+msgid "Intelligence artificielle"
+msgstr "Artificial intelligence"
+
+#: django_web_aioly/views.py:98
+msgid ""
+"Maxime Metz, ingénieur en R&D , titulaire d'un doctorat de Montpellier "
+"SupAgro obtenu en 2021 avec une spécialisation en traitement des données "
+"spectrales, a développé plusieurs méthodes de traitement de données. Ses "
+"travaux se sont principalement concentrés sur des approches de traitement "
+"des données spectrales pour les données volumineuses, ainsi que sur des "
+"méthodes de traitement de données robustes. En 2022, il a rejoint Pellenc ST"
+" où il travaille sur le développement de nouveaux modèles d'intelligence "
+"artificielle pour le tri des déchets."
+msgstr ""
+"Maxime Metz, R&D engineer, holder of a doctorate from Montpellier SupAgro "
+"obtained in 2021 with a specialization in spectral data processing, has "
+"developed several data processing methods.His work has mainly focused on "
+"spectral data processing approaches for big data, as well as robust data "
+"processing methods.In 2022, he joined Pellenc ST where he works on the "
+"development of new artificial intelligence models for waste sorting."
+
+#: django_web_aioly/views.py:107
+msgid "Ingénieur optique et traitement d'image"
+msgstr "Optical and image processing engineer"
+
+#: django_web_aioly/views.py:108
+msgid "Optique, Intelligence artificielle"
+msgstr "Optics, Artificial Intelligence"
+
+#: django_web_aioly/views.py:111
+msgid ""
+"Diplomé d'un double diplome Supoptique-ESPCI, Nicolas a démarré en tant "
+"qu'ingénieur d'application dans le domaine de l'imagerie médicale. Il "
+"poursuit sa carriere au sein de Pellenc ST en tant qu'ingénieur optique et "
+"traitement d'image."
+msgstr ""
+"Graduated with a double Supoptique-ESPCI degree, Nicolas started as an "
+"application engineer in the field of medical imaging.He continued his career"
+" within Pellenc ST as an optical and image processing engineer."
+
+#: django_web_aioly/views.py:120
+msgid "Ingénieure optique et chef de projet"
+msgstr "Optical engineer and project manager"
+
+#: django_web_aioly/views.py:121
+msgid "Optique"
+msgstr "Optical"
+
+#: django_web_aioly/views.py:133
+msgid "Doctorant"
+msgstr "PhD student"
+
+#: django_web_aioly/views.py:134
+msgid "Intelligence artificielle, Chimiométrie"
+msgstr "Artificial Intelligence, Chemometrics"
+
+#: django_web_aioly/views.py:146 django_web_aioly/views.py:159
+msgid "Ingénieur developpement IA"
+msgstr "AI development engineer"
+
+#: django_web_aioly/views.py:150
+msgid ""
+"Diplômé en génie informatique de l'UTC en 2023, il intègre Pellenc ST en "
+"tant qu'ingénieur vision R&D, spécialisé dans les modèles de vision RGB. Il "
+"évolue ensuite vers un poste d'ingénieur vision dédié au développement et à "
+"l'industrialisation de l'IA. Ses travaux portent principalement sur "
+"l'intégration de modèles d'IA sur les machines de tri et sur la création "
+"d'outils facilitant leur entraînement et leur déploiement."
+msgstr ""
+"Graduated in computer engineering from UTC in 2023, he joined Pellenc ST as "
+"an R&D vision engineer, specializing in RGB vision models.He then progressed"
+" to a vision engineer position dedicated to the development and "
+"industrialization of AI.His work mainly focuses on the integration of AI "
+"models on sorting machines and the creation of tools to facilitate their "
+"training and deployment."
+
+#: templates/base.html:247
+msgid "Accueil"
+msgstr "Welcome"
+
+#: templates/base.html:250
+msgid "Actualités"
+msgstr "News"
+
+#: templates/base.html:253
+msgid "Chercheurs"
+msgstr "Researchers"
+
+#: templates/base.html:256
+msgid "Partenaires"
+msgstr "Partners"
+
+#: templates/base.html:259 templates/pages/contact.html:9
+msgid "Nous contacter"
+msgstr "Contact us"
+
+#: templates/pages/accueil.html:9 templates/pages/actualites.html:11
+#: templates/pages/partenaires.html:10
+msgid "Bienvenue sur Labcom AIOLY"
+msgstr "Welcome to Labcom AIOLY"
+
+#: templates/pages/accueil.html:10 templates/pages/actualites.html:12
+msgid ""
+"Découvrez les dernières nouvelles, articles et informations sur nos projets "
+"de recherche et innovations."
+msgstr ""
+"Discover the latest news, articles and information on our research projects "
+"and innovations."
+
+#: templates/pages/actualites.html:7
+#: templates/pages/polarisation_mueller.html:5
+msgid "Actualités - Labcom AIOLY"
+msgstr "News - Labcom AIOLY"
+
+#: templates/pages/actualites.html:16
+msgid "Actualités :"
+msgstr "News:"
+
+#: templates/pages/actualites.html:21
+msgid "Décembre 2025"
+msgstr "December 2025"
+
+#: templates/pages/actualites.html:22
+msgid ""
+"Publication de l'article : Simple methods for uncertainty estimation in "
+"neural networks applied to spectral data processing"
+msgstr ""
+"Publication of the article: Simple methods for uncertainty estimation in "
+"neural networks applied to spectral data processing"
+
+#: templates/pages/actualites.html:24
+msgid ""
+"L’année s’est conclue par la publication de l’article « Simple methods for uncertainty estimation in neural networks applied to spectral data processing »\n"
+"                    dans Chemometrics and Intelligent Laboratory Systems, signé par Maxime Metz, Khadija Lamdibih, Jean-Michel Roger, David Esteve, Ryad Bendoula et Florent Abdelghafour."
+msgstr ""
+"The year concluded with the publication of the article “Simple methods for uncertainty estimation in neural networks applied to spectral data processing”\n"
+"in Chemometrics and Intelligent Laboratory Systems, signed by Maxime Metz, Khadija Lamdibih, Jean-Michel Roger, David Esteve, Ryad Bendoula and Florent Abdelghafour."
+
+#: templates/pages/actualites.html:33
+msgid "Octobre 2025 | Tirana"
+msgstr "October 2025 |Tirana"
+
+#: templates/pages/actualites.html:34
+msgid "Participation à la conférence SenseAIfood"
+msgstr "Participation in the SenseAIfood conference"
+
+#: templates/pages/actualites.html:36
+msgid ""
+"Le LabCom AiLoY a participé à deux conférences majeures consacrées à la spectroscopie et à la chimiométrie.\n"
+"                    À ICNIRS 2025 (Rome), Maxime Metz a présenté un poster sur la classification des plastiques,\n"
+"                    Florent Abdelghafour a exposé des travaux sur l’apprentissage profond appliqué aux données NIRS,\n"
+"                    et Ivy Tumoine a proposé une étude sur la génération de données synthétiques.\n"
+"                    Aux 26ᵉ Rencontres Héliospir (Montpellier), l’équipe a présenté plusieurs communications orales autour du Deep-Chemometrics,\n"
+"                    comparant notamment différentes stratégies de prétraitement et d’augmentation de données."
+msgstr ""
+"LabCom AiLoY participated in two major conferences dedicated to spectroscopy and chemometrics.\n"
+"At ICNIRS 2025 (Rome), Maxime Metz presented a poster on the classification of plastics,\n"
+"Florent Abdelghafour presented work on deep learning applied to NIRS data,\n"
+"and Ivy Tumoine proposed a study on the generation of synthetic data.\n"
+"At the 26th Héliospir Meetings (Montpellier), the team presented several oral communications around Deep-Chemometrics,\n"
+"notably comparing different preprocessing and data augmentation strategies."
+
+#: templates/pages/actualites.html:49
+msgid "Juin 2025 | Rome / Montpellier"
+msgstr "June 2025 |Rome / Montpellier"
+
+#: templates/pages/actualites.html:50
+msgid "Participation aux conférences ICNIRS et Héliospir"
+msgstr "Participation in ICNIRS and Héliospir conferences"
+
+#: templates/pages/actualites.html:52
+msgid ""
+"Le LabCom AiLoY a pris part à la conférence SenseAIfood à Tirana, consacrée à l’intelligence artificielle et aux technologies spectrales pour l’agroalimentaire.\n"
+"                    Daniele Tanzilli a présenté ses travaux sur les stratégies d’agrégation de prétraitements pour l’analyse spectrale.\n"
+"                    Florent Abdelghafour a présenté une comparaison de différentes architectures neuronales pour les données spectrales."
+msgstr ""
+"LabCom AiLoY took part in the SenseAIfood conference in Tirana, dedicated to artificial intelligence and spectral technologies for the food industry.\n"
+"Daniele Tanzilli presented his work on preprocessing aggregation strategies for spectral analysis.\n"
+"Florent Abdelghafour presented a comparison of different neural architectures for spectral data."
+
+#: templates/pages/actualites.html:62
+msgid "04/11/2024 | Pertuis"
+msgstr "04/11/2024 |Pertuis"
+
+#: templates/pages/actualites.html:63
+msgid "Début de thèse d'Ivy Tumoine"
+msgstr "Start of Ivy Tumoine's thesis"
+
+#: templates/pages/actualites.html:65
+msgid ""
+"Début de thèse de Ivy Tumoine sur l’auto-supervision appliquée aux données hyper-spectrales.\n"
+"                    Les premiers travaux se concentreront sur les transformations à appliquer aux données spectrales."
+msgstr ""
+"Start of Ivy Tumoine's thesis on self-supervision applied to hyper-spectral data.\n"
+"The first work will focus on the transformations to be applied to spectral data."
+
+#: templates/pages/actualites.html:74
+msgid "04/11/2024 | Montpellier"
+msgstr "04/11/2024 |Montpellier"
+
+#: templates/pages/actualites.html:75
+msgid "Participation à HELIOSPIR"
+msgstr "Participation in HELIOSPIR"
+
+#: templates/pages/actualites.html:77
+msgid ""
+"Présentation de poster sur l’utilisation de l’active learning pour calibrer des spectromètres entre eux.\n"
+"                    Sessions d’échanges et workshops."
+msgstr ""
+"Poster presentation on the use of active learning to calibrate spectrometers together.\n"
+"Discussion sessions and workshops."
+
+#: templates/pages/actualites.html:88
+msgid "Nos sujets de recherche :"
+msgstr "Our research topics:"
+
+#: templates/pages/actualites.html:92
+msgid "Illustration Apprentissage auto-supervisé"
+msgstr "Illustration Self-supervised learning"
+
+#: templates/pages/actualites.html:94
+msgid "Apprentissage auto-supervisé"
+msgstr "Self-supervised learning"
+
+#: templates/pages/actualites.html:96
+msgid ""
+"L'apprentissage auto-supervisé est une méthode d'apprentissage qui ne requiert pas d'annotation manuelle.\n"
+"                Le modèle apprend des représentations utiles en s'appuyant sur des relations ou des structures internes présentes dans les données."
+msgstr ""
+"Self-supervised learning is a learning method that does not require manual annotation.\n"
+"The model learns useful representations by relying on relationships or internal structures present in the data."
+
+#: templates/pages/actualites.html:101 templates/pages/actualites.html:110
+msgid "Lire plus"
+msgstr "Read more"
+
+#: templates/pages/actualites.html:107
+msgid "Illustration Polarisation de Mueller"
+msgstr "Illustration Mueller polarization"
+
+#: templates/pages/actualites.html:109
+msgid "Polarisation de Mueller"
+msgstr "Mueller polarization"
+
+#: templates/pages/apprentissage_autosup.html:5
+msgid "Apprentissage auto-supervisé - Labcom AIOLY"
+msgstr "Self-supervised learning - Labcom AIOLY"
+
+#: templates/pages/apprentissage_autosup.html:15
+msgid "Illustration Article 1"
+msgstr "Illustration Article 1"
+
+#: templates/pages/apprentissage_autosup.html:18
+msgid "L'apprentissage auto-supervisé"
+msgstr "Self-supervised learning"
+
+#: templates/pages/apprentissage_autosup.html:20
+msgid ""
+"L'apprentissage auto-supervisé est une méthode d'apprentissage profond qui tire parti de larges bases de données non annotées.\n"
+"                Les modèles entraînés en auto-supervision présentent les meilleures performances dans le traitement du langage, notamment avec les chatbots, et d'excellentes performances en vision par ordinateur."
+msgstr ""
+"Self-supervised learning is a deep learning method that takes advantage of large unannotated databases.\n"
+"Models trained in self-supervision have the best performance in language processing, especially with chatbots, and excellent performance in computer vision."
+
+#: templates/pages/apprentissage_autosup.html:26
+msgid "Apprentissage auto-supervisé pour le texte et l'image"
+msgstr "Self-supervised learning for text and image"
+
+#: templates/pages/apprentissage_autosup.html:28
+msgid ""
+"Pour entraîner un modèle à faire une tâche souhaitée, la méthode classique d'apprentissage consiste à minimiser l'erreur entre la prédiction du modèle et celle d'un annotateur humain.\n"
+"                Obtenir une annotation est souvent long, pénible et extrêmement onéreux — c'est la principale raison pour laquelle les modèles auto-supervisés sont si intéressants."
+msgstr ""
+"To train a model to do a desired task, the classic learning method consists of minimizing the error between the model's prediction and that of a human annotator.\n"
+"Obtaining an annotation is often time-consuming, painful, and extremely expensive — this is the main reason why self-supervised models are so attractive."
+
+#: templates/pages/apprentissage_autosup.html:34
+msgid ""
+"On peut voir un modèle neuronal profond comme la succession d'un encodeur et d'un décodeur.\n"
+"                L'encodeur permet d'obtenir des représentations des données et le décodeur effectue la tâche souhaitée.\n"
+"                La figure 1 illustre cela avec le modèle AlexNet : une succession de convolutions permet d'obtenir une représentation de l'image, puis quelques couches denses décodent cette information afin de déterminer la classe correspondante."
+msgstr ""
+"We can see a deep neural model as the succession of an encoder and a decoder.\n"
+"The encoder provides representations of the data and the decoder performs the desired task.\n"
+"Figure 1 illustrates this with the AlexNet model: a succession of convolutions makes it possible to obtain a representation of the image, then a few dense layers decode this information in order to determine the corresponding class."
+
+#: templates/pages/apprentissage_autosup.html:43
+msgid "Illustration de l’encodeur-décodeur"
+msgstr "Illustration of the encoder-decoder"
+
+#: templates/pages/apprentissage_autosup.html:48
+msgid ""
+"Pour utiliser un modèle entraîné en auto-supervision afin de réaliser une tâche donnée, on transfère l'encodeur du modèle et on y ajoute un décodeur adapté.\n"
+"                Transférer l'encodeur consiste à reprendre son architecture et ses poids — c'est un simple copié-collé.\n"
+"                L'ensemble encodeur + décodeur est ensuite entraîné à accomplir la tâche souhaitée, comme illustré en figure 2.\n"
+"                L'idée est qu'un encodeur entraîné en auto-supervision produit de meilleures représentations des données qu'un encodeur initialisé aléatoirement."
+msgstr ""
+"To use a model trained in self-supervision to carry out a given task, we transfer the model's encoder and add a suitable decoder.\n"
+"Transferring the encoder involves taking its architecture and weights — it’s a simple copy and paste.\n"
+"The encoder + decoder assembly is then trained to accomplish the desired task, as illustrated in Figure 2.\n"
+"The idea is that an encoder trained in self-supervision produces better representations of the data than a randomly initialized encoder."
+
+#: templates/pages/apprentissage_autosup.html:58
+msgid "Illustration du transfert d’encodeur"
+msgstr "Illustration of encoder transfer"
+
+#: templates/pages/apprentissage_autosup.html:63
+msgid ""
+"Afin d'apprendre à fournir de bonnes représentations, les modèles entraînés en auto-supervision apprennent sur une <i>tâche prétexte</i>.\n"
+"                Cette tâche prétexte est fondée sur l'observation des données et ne requiert aucune annotation manuelle.\n"
+"                Il existe trois grandes familles de tâches prétextes :"
+msgstr ""
+"In order to learn to provide good representations, models trained in self-supervision learn on a <i>pretext task</i>.\n"
+"This pretext task is based on observation of data and does not require any manual annotation.\n"
+"There are three main families of pretext tasks:"
+
+#: templates/pages/apprentissage_autosup.html:72
+msgid ""
+"<b>Les tâches de reconstruction.</b> À partir d'une donnée dont on a masqué automatiquement une partie de l'information, le modèle doit reconstruire la donnée complète.\n"
+"                    Pour les images, cela peut consister à masquer aléatoirement un groupe de pixels ; pour le texte, à cacher certains mots."
+msgstr ""
+"<b>Reconstruction tasks.</b> From data in which part of the information has been automatically hidden, the model must reconstruct the complete data.\n"
+"For images, this may consist of randomly masking a group of pixels;for the text, to hide certain words."
+
+#: templates/pages/apprentissage_autosup.html:78
+msgid ""
+"<b>Les tâches contrastives.</b> Le modèle est entraîné à obtenir des représentations proches pour des images similaires (paires positives) et éloignées pour des images différentes (paires négatives).\n"
+"                    Les paires positives sont obtenues en appliquant des transformations (ou augmentations de données) à une même image."
+msgstr ""
+"<b>Contrastive tasks.</b> The model is trained to obtain close representations for similar images (positive pairs) and distant ones for different images (negative pairs).\n"
+"Positive pairs are obtained by applying transformations (or data augmentations) to the same image."
+
+#: templates/pages/apprentissage_autosup.html:84
+msgid ""
+"<b>Les tâches d'invariance.</b> Le modèle apprend à obtenir des représentations proches pour des images similaires.\n"
+"                    Une solution triviale serait de considérer toutes les images comme identiques — un phénomène appelé <i>effondrement</i>.\n"
+"                    Pour éviter cela, des contraintes de régularisation sont appliquées durant l'entraînement."
+msgstr ""
+"<b>Invariance tasks.</b> The model learns to obtain close representations for similar images.\n"
+"A trivial solution would be to treat all images as identical — a phenomenon called <i>collapse</i>.\n"
+"To avoid this, regularization constraints are applied during training."
+
+#: templates/pages/apprentissage_autosup.html:92
+msgid "L'apprentissage auto-supervisé appliqué aux données spectrales"
+msgstr "Self-supervised learning applied to spectral data"
+
+#: templates/pages/apprentissage_autosup.html:94
+msgid ""
+"Si l'apprentissage auto-supervisé est très populaire pour les images et le texte, il est encore quasi inexistant pour les données spectrales.\n"
+"                C'est pourquoi PellencST et l'équipe COMIC ont lancé une thèse intitulée « Apprentissage auto-supervisé appliqué aux données spectrales pour le tri des déchets ».\n"
+"                Cette thèse, réalisée par Ivy Tumoine, est co-dirigée par Ryad Bendoula et Jean-Michel Roger, et co-encadrée par Maxime Metz et Florent Abdelghafour."
+msgstr ""
+"While self-supervised learning is very popular for images and text, it is still almost non-existent for spectral data.\n"
+"This is why PellencST and the COMIC team launched a thesis entitled “Self-supervised learning applied to spectral data for waste sorting”.\n"
+"This thesis, carried out by Ivy Tumoine, is co-directed by Ryad Bendoula and Jean-Michel Roger, and co-supervised by Maxime Metz and Florent Abdelghafour."
+
+#: templates/pages/apprentissage_autosup.html:102
+msgid ""
+"L'adaptation de ces approches auto-supervisées nécessite de lever trois "
+"verrous méthodologiques majeurs :"
+msgstr ""
+"The adaptation of these self-supervised approaches requires removing three "
+"major methodological obstacles:"
+
+#: templates/pages/apprentissage_autosup.html:109
+msgid ""
+"<b>Augmentation de données spectrales.</b> Les approches auto-supervisées cherchent à rendre les modèles invariants à certaines perturbations via des augmentations de données.\n"
+"                    Cependant, peu de recherches concernent les augmentations adaptées aux spectres.\n"
+"                    Comme ces transformations influencent directement les connaissances apprises, elles doivent être conçues en tenant compte de la nature des données spectrales : composition, dépendances lointaines, conditions de mesure, etc."
+msgstr ""
+"<b>Spectral data augmentation.</b> Self-supervised approaches seek to make models invariant to certain disturbances via data augmentation.\n"
+"However, there is little research regarding spectra-adapted augmentations.\n"
+"As these transformations directly influence the knowledge learned, they must be designed taking into account the nature of the spectral data: composition, distant dependencies, measurement conditions, etc."
+
+#: templates/pages/apprentissage_autosup.html:116
+msgid ""
+"<b>Réseaux neuronaux adaptés aux données spectrales.</b> Ces approches nécessiteront sans doute des architectures mieux adaptées aux spectres.\n"
+"                    Si de nombreux réseaux existent pour les images et les vidéos, peu sont optimisés pour les données spectrales.\n"
+"                    Les ResNet, par exemple, ne prennent pas toujours en compte les corrélations lointaines entre longueurs d’onde.\n"
+"                    De nouvelles architectures comme les Transformers (SWIN, ViT, etc.) devront être explorées."
+msgstr ""
+"<b>Neural networks adapted to spectral data.</b> These approaches will undoubtedly require architectures better adapted to spectra.\n"
+"While many networks exist for images and videos, few are optimized for spectral data.\n"
+"ResNets, for example, do not always take into account distant correlations between wavelengths.\n"
+"New architectures such as Transformers (SWIN, ViT, etc.) will need to be explored."
+
+#: templates/pages/apprentissage_autosup.html:124
+msgid ""
+"<b>Stratégies d'auto-supervision adaptées aux données spectrales.</b> Les stratégies utilisées dans d'autres domaines ne tiennent pas compte de la structure spectrale.\n"
+"                    Par exemple, le masquage spatial classique n'est pas adapté car certaines signatures spectrales ne dépendent que d'une gamme de longueurs d'onde.\n"
+"                    L'objectif sera donc de concevoir de nouvelles stratégies d'auto-supervision adaptées, par exemple en masquant une partie des structures latentes."
+msgstr ""
+"<b>Self-supervision strategies adapted to spectral data.</b> Strategies used in other domains do not take spectral structure into account.\n"
+"For example, classical spatial masking is not suitable because certain spectral signatures only depend on a range of wavelengths.\n"
+"The objective will therefore be to design new adapted self-supervision strategies, for example by masking part of the latent structures."
+
+#: templates/pages/apprentissage_autosup.html:135
+#: templates/pages/polarisation_mueller.html:98
+msgid "Retour"
+msgstr "Back"
+
+#: templates/pages/chercheurs.html:7
+msgid "Chercheurs - Labcom AIOLY"
+msgstr "Researchers - Labcom AIOLY"
+
+#: templates/pages/chercheurs.html:11
+msgid "Nos Chercheuses et Chercheurs"
+msgstr "Our Researchers"
+
+#: templates/pages/chercheurs.html:12
+msgid ""
+"Découvrez les membres de notre équipe de recherche de part et d'autres du "
+"Labcom."
+msgstr "Discover the members of our research team across Labcom."
+
+#: templates/pages/chercheurs.html:17
+msgid "INRAE"
+msgstr "INRAE"
+
+#: templates/pages/chercheurs.html:27 templates/pages/chercheurs.html:46
+msgid "Voir plus"
+msgstr "See more"
+
+#: templates/pages/chercheurs.html:36 templates/pages/contact.html:18
+msgid "Pellenc ST"
+msgstr "Pellenc ST"
+
+#: templates/pages/chercheurs_page.html:5
+msgid "Chercheur - Labcom AIOLY"
+msgstr "Researcher - Labcom AIOLY"
+
+#: templates/pages/chercheurs_page.html:27
+msgid "Domaine de recherche :"
+msgstr "Research area:"
+
+#: templates/pages/chercheurs_page.html:30
+msgid "Publications :"
+msgstr "Publications:"
+
+#: templates/pages/chercheurs_page.html:35
+msgid "Aucune publication disponible."
+msgstr "No publications available."
+
+#: templates/pages/chercheurs_page.html:41
+msgid "Brevets récents :"
+msgstr "Recent patents:"
+
+#: templates/pages/chercheurs_page.html:46
+msgid "Aucun brevet disponible."
+msgstr "No patent available."
+
+#: templates/pages/chercheurs_page.html:51
+msgid "Biographie :"
+msgstr "Biography:"
+
+#: templates/pages/chercheurs_page.html:55
+msgid "Aucune biographie disponible."
+msgstr "No biography available."
+
+#: templates/pages/chercheurs_page.html:60
+msgid "Google Scholar :"
+msgstr "Google Scholar:"
+
+#: templates/pages/chercheurs_page.html:67
+msgid "LinkedIn :"
+msgstr "LinkedIn:"
+
+#: templates/pages/chercheurs_page.html:76
+msgid "Retour à la liste des chercheurs"
+msgstr "Return to the list of researchers"
+
+#: templates/pages/contact.html:5
+msgid "Contacts - Labcom AIOLY"
+msgstr "Contacts - Labcom AIOLY"
+
+#: templates/pages/contact.html:10
+msgid "Pour tout contact ou demande d'informations veuillez contacter :"
+msgstr "For any contact or request for information please contact:"
+
+#: templates/pages/contact.html:13
+msgid "Equipe COMIC, Inrae"
+msgstr "COMIC team, Inrae"
+
+#: templates/pages/contact.html:24
+msgid "Animation illustrative"
+msgstr "Illustrative animation"
+
+#: templates/pages/partenaires.html:5
+msgid "Partenaires - Labcom AIOLY"
+msgstr "Partners - Labcom AIOLY"
+
+#: templates/pages/partenaires.html:11
+msgid ""
+"Ce laboratoire commun est un partenariat entre les deux institutions de "
+"renommée mondiale que sont :"
+msgstr ""
+"This joint laboratory is a partnership between the two world-renowned "
+"institutions:"
+
+#: templates/pages/partenaires.html:16
+msgid "Logo INRAE"
+msgstr "INRAE ​​logo"
+
+#: templates/pages/partenaires.html:27
+msgid "Logo Pellenc ST"
+msgstr "Pellenc ST logo"
+
+#: templates/pages/polarisation_mueller.html:14
+msgid "Illustration polarisation Mueller"
+msgstr "Illustration of Mueller polarization"
+
+#: templates/pages/polarisation_mueller.html:17
+msgid "L'imagerie par polarisation de Mueller"
+msgstr "Mueller Polarization Imaging"
+
+#: templates/pages/polarisation_mueller.html:18
+msgid ""
+"L'imagerie polarimétrique est un type d'imagerie utilisant la polarisation "
+"de la lumière comme source d'information. Elle se base sur les propriétés de"
+" réflexion et transmission des différents objets étudiés, qui modifient un "
+"état de polarisation initial."
+msgstr ""
+"Polarimetric imaging is a type of imaging using the polarization of light as"
+" a source of information.It is based on the reflection and transmission "
+"properties of the different objects studied, which modify an initial "
+"polarization state."
+
+#: templates/pages/polarisation_mueller.html:19
+msgid ""
+"Ce type d'imagerie permet ainsi d'obtenir des informations sur la structure "
+"microscopique des objets. Pour les polymères, cette information est "
+"particulièrement intéressante, car un même monomère peut donner des "
+"structures polymères différentes."
+msgstr ""
+"This type of imaging thus makes it possible to obtain information on the "
+"microscopic structure of objects.For polymers, this information is "
+"particularly interesting, because the same monomer can give different "
+"polymer structures."
+
+#: templates/pages/polarisation_mueller.html:20
+msgid ""
+"Elle permet également de séparer les réflexions multiples en profondeur d'un"
+" objet des réflexions en surface. On peut utiliser l'imagerie polarimétrique"
+" comme un 'filtre' afin de ne conserver que l'information souhaitée."
+msgstr ""
+"It also makes it possible to separate multiple reflections in depth of an "
+"object from reflections on the surface.Polarimetric imaging can be used as a"
+" 'filter' in order to retain only the desired information."
+
+#: templates/pages/polarisation_mueller.html:22
+msgid "La polarisation :"
+msgstr "Polarization:"
+
+#: templates/pages/polarisation_mueller.html:23
+msgid ""
+"Une onde lumineuse est une onde électromagnétique constituée d'un champ "
+"électrique (E) et d'un champ magnétique (B) oscillant perpendiculairement "
+"l'un à l'autre et à la direction de propagation."
+msgstr ""
+"A light wave is an electromagnetic wave consisting of an electric field (E) "
+"and a magnetic field (B) oscillating perpendicular to each other and to the "
+"direction of propagation."
+
+#: templates/pages/polarisation_mueller.html:27
+msgid "Illustration onde électromagnétique"
+msgstr "Electromagnetic wave illustration"
+
+#: templates/pages/polarisation_mueller.html:31
+msgid ""
+"Dans la lumière naturelle, comme celle du Soleil, ces oscillations se "
+"produisent dans toutes les directions perpendiculaires à la direction de "
+"propagation : on parle de lumière 'non polarisée'. La lumière est dite "
+"'polarisée' lorsqu'elle ne vibre que dans certaines directions spécifiques."
+msgstr ""
+"In natural light, such as that of the Sun, these oscillations occur in all "
+"directions perpendicular to the direction of propagation: we speak of "
+"'unpolarized' light.Light is said to be 'polarized' when it only vibrates in"
+" certain specific directions."
+
+#: templates/pages/polarisation_mueller.html:32
+msgid ""
+"La polarisation peut être linéaire (vibrations dans une seule direction), "
+"circulaire (oscillations décrivant un cercle autour de l'axe de "
+"propagation), ou elliptique (oscillations suivant une ellipse)."
+msgstr ""
+"Polarization can be linear (vibrations in a single direction), circular "
+"(oscillations describing a circle around the axis of propagation), or "
+"elliptical (oscillations following an ellipse)."
+
+#: templates/pages/polarisation_mueller.html:34
+msgid "Formalisme de Stokes :"
+msgstr "Stokes formalism:"
+
+#: templates/pages/polarisation_mueller.html:35
+msgid ""
+"Pour caractériser entièrement la polarisation de la lumière, on utilise "
+"généralement le formalisme de Stokes, représenté sous forme d'un vecteur :"
+msgstr ""
+"To fully characterize the polarization of light, we generally use the Stokes"
+" formalism, represented in the form of a vector:"
+
+#: templates/pages/polarisation_mueller.html:39
+msgid "On peut ainsi reconnaître :"
+msgstr "We can thus recognize:"
+
+#: templates/pages/polarisation_mueller.html:41
+msgid "I comme l'intensité totale"
+msgstr "I as the total intensity"
+
+#: templates/pages/polarisation_mueller.html:42
+msgid "Q comme le contraste entre la polarisation 0° et 90°"
+msgstr "Q as the contrast between 0° and 90° polarization"
+
+#: templates/pages/polarisation_mueller.html:43
+msgid "U comme le contraste entre la polarisation +45° et -45°"
+msgstr "U like the contrast between polarization +45° and -45°"
+
+#: templates/pages/polarisation_mueller.html:44
+msgid ""
+"V comme le contraste entre les polarisations circulaires droite et gauche"
+msgstr "V as the contrast between right and left circular polarizations"
+
+#: templates/pages/polarisation_mueller.html:47
+msgid "Représentation dans la sphère de Poincaré :"
+msgstr "Representation in the Poincaré sphere:"
+
+#: templates/pages/polarisation_mueller.html:48
+msgid ""
+"Ce vecteur est souvent ramené en trois dimensions en normalisant par I. La "
+"sphère de Poincaré permet de représenter graphiquement les états de "
+"polarisation."
+msgstr ""
+"This vector is often reduced to three dimensions by normalizing by I. The "
+"Poincaré sphere makes it possible to graphically represent the polarization "
+"states."
+
+#: templates/pages/polarisation_mueller.html:51
+msgid "Sphère de Poincaré"
+msgstr "Poincaré sphere"
+
+#: templates/pages/polarisation_mueller.html:55
+msgid "Matrice de Mueller :"
+msgstr "Mueller matrix:"
+
+#: templates/pages/polarisation_mueller.html:56
+msgid ""
+"La matrice de Mueller M_objet définit la transformation d'un vecteur S_init "
+"en un vecteur S_sortie après interaction avec un objet ou élément optique."
+msgstr ""
+"The Mueller matrix M_object defines the transformation of a vector S_init "
+"into a vector S_output after interaction with an object or optical element."
+
+#: templates/pages/polarisation_mueller.html:59
+msgid "Principe de mesure :"
+msgstr "Measuring principle:"
+
+#: templates/pages/polarisation_mueller.html:60
+msgid ""
+"La polarisation incidente est générée par un PSG (Polarization State "
+"Generator), l'objet est étudié, et l'état de sortie est analysé par un PSA "
+"(Polarization State Analyser)."
+msgstr ""
+"The incident polarization is generated by a PSG (Polarization State "
+"Generator), the object is studied, and the output state is analyzed by a PSA"
+" (Polarization State Analyzer)."
+
+#: templates/pages/polarisation_mueller.html:62
+msgid "Montage en réflexion"
+msgstr "Editing in reflection"
+
+#: templates/pages/polarisation_mueller.html:65
+msgid "PSG et PSA :"
+msgstr "PSG and PSA:"
+
+#: templates/pages/polarisation_mueller.html:66
+msgid ""
+"Le PSG permet d'obtenir toutes les polarisations souhaitées. Le PSA, "
+"constitué des mêmes éléments optiques mais dans l'ordre inverse, analyse "
+"l'état de sortie."
+msgstr ""
+"The PSG makes it possible to obtain all the desired polarizations.The PSA, "
+"consisting of the same optical elements but in reverse order, analyzes the "
+"output state."
+
+#: templates/pages/polarisation_mueller.html:70
+msgid "Retardance du Cristal Liquide 1"
+msgstr "Liquid Crystal Delay 1"
+
+#: templates/pages/polarisation_mueller.html:74
+msgid "Retardance du Cristal Liquide 2"
+msgstr "Liquid Crystal Delay 2"
+
+#: templates/pages/polarisation_mueller.html:78
+msgid "Retardance du Cristal Liquide 1'"
+msgstr "Liquid Crystal Delay 1'"
+
+#: templates/pages/polarisation_mueller.html:82
+msgid "Retardance du Cristal Liquide 2'"
+msgstr "Liquid Crystal Delay 2'"
+
+#: templates/pages/polarisation_mueller.html:86
+msgid "Manipulations :"
+msgstr "Handling:"
+
+#: templates/pages/polarisation_mueller.html:87
+msgid "Les manipulations sont actuellement en cours."
+msgstr "The manipulations are currently in progress."
+
+#: templates/pages/polarisation_mueller.html:88
+msgid "Résultats :"
+msgstr "Results :"
+
+#: templates/pages/polarisation_mueller.html:89
+msgid "À venir."
+msgstr "Future."
+
+#: templates/pages/polarisation_mueller.html:91
+msgid "Sources :"
+msgstr "Sources:"
+
+#: templates/pages/polarisation_mueller.html:92
+msgid ""
+"[1] Sami Ben Hatit. Polarimétrie de Mueller résolue en angle. Physics "
+"[physics]. École Polytechnique X,2009."
+msgstr ""
+"[1] Sami Ben Hatit.Angle-resolved Mueller polarimetry.Physics "
+"[physics].École Polytechnique X, 2009."
