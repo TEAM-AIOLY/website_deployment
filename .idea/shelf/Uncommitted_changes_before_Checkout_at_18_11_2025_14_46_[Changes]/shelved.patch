@@ -1,0 +1,22 @@
+Index: django_web_aioly/settings.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"\r\nDjango settings for django_web_aioly project.\r\n\"\"\"\r\n\r\nimport os\r\nfrom pathlib import Path\r\nimport gettext\r\n\r\n\r\n\r\nBASE_DIR = Path(__file__).resolve().parent.parent\r\n\r\nSECRET_KEY = 'django-insecure-lta%!6bqdqfkapa4fqfrj2-p=%vgas9h9*^nr^-w@z-o)9(-08'\r\n\r\nDEBUG = False\r\nALLOWED_HOSTS = ['*']\r\n\r\nINSTALLED_APPS = [\r\n    'django.contrib.admin',\r\n    'django.contrib.auth',\r\n    'django.contrib.contenttypes',\r\n    'django.contrib.sessions',\r\n    'django.contrib.messages',\r\n    'django.contrib.staticfiles',\r\n    'django_distill',\r\n]\r\n\r\nMIDDLEWARE = [\r\n    'django.middleware.security.SecurityMiddleware',\r\n    'django.contrib.sessions.middleware.SessionMiddleware',\r\n\r\n    # ✅ Ajoute ceci pour activer la détection et le changement de langue\r\n    'django.middleware.locale.LocaleMiddleware',\r\n\r\n    'django.middleware.common.CommonMiddleware',\r\n    'django.middleware.csrf.CsrfViewMiddleware',\r\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\r\n    'django.contrib.messages.middleware.MessageMiddleware',\r\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\r\n]\r\n\r\nROOT_URLCONF = 'django_web_aioly.urls'\r\n\r\nTEMPLATES = [\r\n    {\r\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\r\n        'DIRS': [BASE_DIR / 'templates'],\r\n        'APP_DIRS': True,\r\n        'OPTIONS': {\r\n            'context_processors': [\r\n                'django.template.context_processors.debug',\r\n                'django.template.context_processors.request',  # ⚠\uFE0F nécessaire pour {% url 'set_language' %}\r\n                'django.contrib.auth.context_processors.auth',\r\n                'django.contrib.messages.context_processors.messages',\r\n            ],\r\n        },\r\n    },\r\n]\r\n\r\nWSGI_APPLICATION = 'django_web_aioly.wsgi.application'\r\n\r\nDATABASES = {\r\n    'default': {\r\n        'ENGINE': 'django.db.backends.sqlite3',\r\n        'NAME': BASE_DIR / 'db.sqlite3',\r\n    }\r\n}\r\n\r\nAUTH_PASSWORD_VALIDATORS = [\r\n    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},\r\n    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},\r\n    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},\r\n    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},\r\n]\r\n\r\n# \uD83C\uDF0D INTERNATIONALISATION\r\nLANGUAGE_CODE = 'fr'\r\n\r\nLANGUAGES = [\r\n    ('fr', 'Français'),\r\n    ('en', 'English'),\r\n]\r\n\r\nUSE_I18N = True\r\nUSE_TZ = True\r\nTIME_ZONE = 'UTC'\r\n\r\n# ✅ Dossier où seront stockés les fichiers .po et .mo\r\nLOCALE_PATHS = [\r\n    BASE_DIR / 'locale',\r\n]\r\n\r\nfor path in LOCALE_PATHS:\r\n    en_mo = os.path.join(path, 'en', 'LC_MESSAGES', 'django.mo')\r\n    print(\"\uD83D\uDDC2 Checking translation file:\", en_mo, \"→ Exists?\", os.path.exists(en_mo))\r\n\r\n# \uD83D\uDDBC\uFE0F FICHIERS STATIQUES\r\nif 'distill' in os.environ.get('DJANGO_SETTINGS_MODULE', ''):\r\n    STATIC_URL = '/website_deployment/static/'\r\nelse:\r\n    STATIC_URL = '/website_deployment/static/'\r\n\r\nDISTILL_STATIC = True\r\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]\r\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\r\n\r\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\r\n\r\nprint(\"LANGUAGES:\", LANGUAGES)\r\nprint(\"LOCALE_PATHS:\", LOCALE_PATHS)\r\nprint(\"LANGUAGE_CODE:\", LANGUAGE_CODE)
+===================================================================
+diff --git a/django_web_aioly/settings.py b/django_web_aioly/settings.py
+--- a/django_web_aioly/settings.py	(revision 829d04f6bf3b1973c0f05164c50e49ce18687948)
++++ b/django_web_aioly/settings.py	(date 1762529365226)
+@@ -94,11 +94,8 @@
+     en_mo = os.path.join(path, 'en', 'LC_MESSAGES', 'django.mo')
+     print("🗂 Checking translation file:", en_mo, "→ Exists?", os.path.exists(en_mo))
+ 
+-# 🖼️ FICHIERS STATIQUES
+-if 'distill' in os.environ.get('DJANGO_SETTINGS_MODULE', ''):
+-    STATIC_URL = '/website_deployment/static/'
+-else:
+-    STATIC_URL = '/website_deployment/static/'
++BASE_URL = '/website_deployment/'
++STATIC_URL = BASE_URL + 'static/'
+ 
+ DISTILL_STATIC = True
+ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
