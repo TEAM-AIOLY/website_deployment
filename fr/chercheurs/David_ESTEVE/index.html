@@ -295,7 +295,7 @@
             const pathParts = window.location.pathname.split('/').filter(p => p);
             // Remplace la première partie (la langue) par la nouvelle langue
             if(pathParts.length > 0 && ['fr','en'].includes(pathParts[0])) {
-                pathParts[0] = lang;
+                pathParts[1] = lang;
             } else {
                 pathParts.unshift(lang);
             }
@@ -368,7 +368,7 @@
 
     <!-- Lien de retour -->
     <p>
-        <a href="/website_deployment//fr/chercheurs/">&larr; Retour à la liste des chercheurs</a>
+        <a href="/website_deployment/fr/chercheurs/">&larr; Retour à la liste des chercheurs</a>
     </p>
 </div>
 
